@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f5f7f4" />
+    <meta name="description" content="مساحة عربية لإدارة عروض الغرف ثلاثية الأبعاد والجهات المحتملة، مع مراجعة بشرية قبل التواصل." />
+    <title>مساحة | وكيل المبيعات الذكي</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2212%22%20fill%3D%22%23e8f4ed%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2316845d%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222.5%22%3E%3Cpath%20d%3D%22M5.5%2012.5%2014.5%207l9%205.5v10l-9%205.5-9-5.5z%22%2F%3E%3Cpath%20d%3D%22m16.5%2012.5%209-5.5%209%205.5v10l-9%205.5-9-5.5z%22%2F%3E%3Cpath%20d%3D%22M12.5%2026.5%2021.5%2021l9%205.5v7l-9%205.5-9-5.5z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A" />
+    <style>
+:root{--ink:#18251f;--muted:#748079;--soft:#9ca69f;--line:#e7ebe7;--paper:#fff;--canvas:#f5f7f4;--green:#16845d;--green-dark:#126747;--green-pale:#eaf5ef;--mint:#d6efe2;--amber:#a96a12;--amber-bg:#fff5df;--red:#b44745;--red-bg:#fff0ee;--blue:#54799d;--shadow:0 8px 28px rgba(29,53,41,.055);--radius:16px;font-family:'IBM Plex Sans Arabic','Tajawal',Tahoma,Arial,sans-serif;color:var(--ink);background:var(--canvas);font-synthesis:none;text-rendering:optimizeLegibility}*{box-sizing:border-box}body{margin:0;background:var(--canvas);font-size:14px}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit}.app-shell{min-height:100vh}.sidebar{width:244px;position:fixed;inset:0 0 0 auto;background:#fff;border-left:1px solid var(--line);z-index:10;display:flex;flex-direction:column;padding:24px 16px 14px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;padding:0 7px 24px}.brand-mark{width:42px;height:42px;border-radius:14px;background:#e8f4ed;display:grid;place-items:center;color:var(--green);flex:none}.brand-mark svg{width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:2.7;stroke-linejoin:round;stroke-linecap:round}.brand strong{display:block;font-family:'Tajawal',sans-serif;font-size:21px;line-height:1.2;letter-spacing:-.3px}.brand small{display:block;font-size:11px;color:var(--muted);margin-top:3px}.sidebar-caption{font-size:10px;font-weight:700;color:#9aa49d;padding:3px 12px 10px;letter-spacing:.04em}.main-nav{display:grid;gap:4px}.nav-item{border:0;background:transparent;min-height:44px;border-radius:10px;padding:0 12px;display:flex;align-items:center;gap:12px;text-align:right;color:#66736b;font-size:13px;transition:background .16s,color .16s}.nav-item:hover{background:#f5f8f5;color:var(--ink)}.nav-item.active{background:#edf6f0;color:var(--green-dark);font-weight:700}.nav-icon,.nav-item [data-icon]{width:19px;height:19px;display:grid;place-items:center}.nav-icon svg,.nav-item [data-icon] svg,.mobile-nav-item svg,.icon-button svg,.privacy-icon svg,.inline-icon svg,.button-icon svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.nav-count{font-size:10px;font-weight:600;color:#7d8981;background:#f0f3f0;border-radius:99px;padding:2px 7px;margin-right:auto}.nav-indicator{width:7px;height:7px;border-radius:50%;background:#e0a23a;margin-right:auto}.status-dot{width:7px;height:7px;border-radius:50%;margin-right:auto}.status-dot.offline{background:#c5cbc6}.sidebar-bottom{margin-top:auto}.privacy-card{background:#f5f8f5;border:1px solid #edf0ed;border-radius:12px;padding:12px;display:flex;gap:10px;align-items:flex-start;margin-bottom:17px}.privacy-icon{color:var(--green);width:19px;flex:none;margin-top:2px}.privacy-card strong{font-size:11px}.privacy-card p{font-size:10px;color:var(--muted);line-height:1.7;margin:3px 0 0}.user-mini{border-top:1px solid var(--line);padding:13px 2px 0;display:flex;align-items:center;gap:9px}.avatar{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#e3eee7;color:var(--green-dark);font-weight:700}.user-mini strong,.user-mini small{display:block}.user-mini strong{font-size:12px}.user-mini small{font-size:10px;color:var(--muted);margin-top:3px}.mini-dots{margin-right:auto;color:#9ba59e;letter-spacing:2px;font-size:12px}.main-area{margin-right:244px;min-height:100vh}.topbar{height:67px;background:rgba(255,255,255,.88);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px;position:sticky;top:0;z-index:8;backdrop-filter:blur(12px)}.breadcrumbs{display:flex;align-items:center;gap:10px;color:#909990;font-size:12px}.breadcrumbs strong{color:#425047;font-size:12px;font-weight:600}.crumb-separator{color:#c4cac5}.topbar-actions{display:flex;align-items:center;gap:8px}.local-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;background:#f1f7f2;color:#547363;font-size:10px;margin-left:8px}.local-badge span{width:6px;height:6px;background:#72a886;border-radius:50%}.icon-button{width:35px;height:35px;border:1px solid var(--line);border-radius:10px;background:#fff;color:#68756d;display:grid;place-items:center;transition:all .16s}.icon-button:hover{border-color:#a9cdb7;color:var(--green);background:#f7fbf8}.icon-button svg{width:17px;height:17px}.content-wrap{max-width:1260px;margin:0 auto;padding:30px 34px 70px}.page-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:22px}.page-heading h1{font-family:'Tajawal',sans-serif;font-size:27px;letter-spacing:-.5px;margin:0 0 5px;font-weight:700;line-height:1.3}.page-heading p{margin:0;color:var(--muted);font-size:12px;line-height:1.8}.eyebrow{display:block;color:var(--green);font-weight:700;font-size:10px;letter-spacing:.02em;margin-bottom:6px}.button{border:1px solid transparent;border-radius:10px;min-height:40px;padding:0 15px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:12px;text-decoration:none;transition:transform .14s,background .14s,border-color .14s}.button:active{transform:scale(.985)}.button-primary{background:var(--green);color:#fff;box-shadow:0 3px 10px rgba(22,132,93,.12)}.button-primary:hover{background:var(--green-dark)}.button-secondary{background:#fff;color:#47554c;border-color:var(--line)}.button-secondary:hover{background:#f7faf7;border-color:#ced8d0}.button-quiet{background:transparent;color:#617067}.button-danger{background:#b54d48;color:white}.button-small{min-height:33px;padding:0 11px;font-size:11px}.button-icon{display:inline-flex}.button:disabled{opacity:.45;cursor:not-allowed}.hero-panel{position:relative;overflow:hidden;background:linear-gradient(105deg,#153f32 0%,#1a6549 64%,#237957 100%);border-radius:20px;color:#fff;padding:26px 28px;min-height:184px;box-shadow:0 12px 30px rgba(26,93,67,.12);margin-bottom:18px;display:flex;align-items:center;justify-content:space-between}.hero-panel:after{content:"";position:absolute;width:245px;height:245px;border:1px solid rgba(255,255,255,.08);border-radius:50%;left:6%;top:-83px;box-shadow:0 0 0 25px rgba(255,255,255,.025),0 0 0 55px rgba(255,255,255,.02)}.hero-copy{position:relative;z-index:1;max-width:550px}.hero-copy .eyebrow{color:#a5d9bb}.hero-copy h1{font-family:'Tajawal',sans-serif;font-size:27px;line-height:1.35;margin:0 0 8px;letter-spacing:-.3px}.hero-copy p{max-width:505px;color:#d9ebe1;font-size:12px;line-height:1.9;margin:0 0 18px}.hero-cta{display:flex;gap:8px;flex-wrap:wrap}.button-light{background:#fff;color:#176547}.button-glass{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.15);color:#fff}.hero-object{width:168px;height:118px;position:relative;z-index:1;margin:0 35px 0 15px;flex:none}.room-box{position:absolute;width:82px;height:62px;border:1.5px solid rgba(217,248,229,.7);border-radius:8px;transform:skewY(-29deg) rotate(0deg);background:linear-gradient(130deg,rgba(193,245,214,.16),rgba(255,255,255,.02));box-shadow:inset 0 0 20px rgba(255,255,255,.05)}.room-box:before{content:"";position:absolute;left:11px;right:11px;top:12px;height:25px;border:1px solid rgba(222,248,230,.62);border-radius:3px;transform:skewY(29deg);background:linear-gradient(90deg,rgba(196,244,215,.22) 33%,transparent 34%,transparent 38%,rgba(196,244,215,.16) 39%)}.room-box:after{content:"";position:absolute;bottom:8px;left:15px;width:35px;height:1px;background:rgba(223,245,231,.72);transform:skewY(29deg)}.room-box.one{top:23px;left:10px}.room-box.two{top:0;left:60px;opacity:.65}.room-box.three{top:53px;left:63px;opacity:.45}.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:19px}.stat-card,.panel,.section-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.stat-card{padding:16px 17px;min-height:101px}.stat-top{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:11px}.stat-icon{width:31px;height:31px;display:grid;place-items:center;border-radius:9px;background:#f1f6f2;color:var(--green)}.stat-icon svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.stat-value{font-family:'Tajawal',sans-serif;font-weight:700;font-size:25px;margin-top:7px;line-height:1}.stat-foot{font-size:9px;color:#9aa49d;margin-top:7px}.dashboard-columns{display:grid;grid-template-columns:1.35fr 1fr;gap:16px}.panel{padding:18px 19px}.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px}.panel-heading h2,.section-card h2{font-family:'Tajawal',sans-serif;font-size:16px;margin:0;font-weight:700}.panel-heading p{color:var(--muted);font-size:10px;margin:4px 0 0}.text-link{border:0;background:transparent;color:var(--green);font-weight:600;font-size:11px;padding:4px}.text-link:hover{text-decoration:underline}.quick-list{display:grid;gap:9px}.quick-item{display:flex;align-items:center;gap:12px;padding:11px;border:1px solid #edf0ed;border-radius:12px;text-decoration:none;transition:border .16s,background .16s}.quick-item:hover{border-color:#c6dbcc;background:#fafffb}.quick-icon{width:34px;height:34px;border-radius:10px;background:#f0f7f2;color:var(--green);display:grid;place-items:center;flex:none}.quick-icon svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.quick-item strong{display:block;font-size:11px}.quick-item small{display:block;color:var(--muted);font-size:10px;margin-top:4px}.quick-arrow{margin-right:auto;color:#9da8a0;font-size:17px}.status-row{display:flex;align-items:flex-start;gap:11px;border-bottom:1px solid #f0f2f0;padding:12px 0}.status-row:last-child{border-bottom:0;padding-bottom:0}.status-symbol{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:#fff5e1;color:#ad7924;flex:none}.status-symbol svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.status-row strong{font-size:11px;display:block}.status-row p{font-size:10px;color:var(--muted);line-height:1.75;margin:4px 0 0}.muted{color:var(--muted)}.callout{display:flex;align-items:flex-start;gap:11px;border:1px solid #dcece0;background:#f4faf5;border-radius:12px;padding:13px 14px;color:#3d6650}.callout.warning{background:var(--amber-bg);border-color:#f0e2c3;color:#765b30}.callout.info{background:#f3f7fa;border-color:#e1eaf0;color:#536e83}.callout svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;flex:none;margin-top:1px}.callout strong{font-size:11px}.callout p{margin:4px 0 0;font-size:10px;line-height:1.8}.page-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.8fr);gap:17px;align-items:start}.section-card{padding:20px;margin-bottom:15px}.section-card:last-child{margin-bottom:0}.section-title{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:18px}.section-title h2{margin:0}.section-title p{font-size:10px;color:var(--muted);line-height:1.7;margin:5px 0 0}.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:6px;min-width:0}.field>span{color:#4d5a52;font-size:11px;font-weight:600}.field b{color:var(--red)}.field input,.field textarea,.field select{width:100%;border:1px solid #e1e7e2;border-radius:9px;background:#fff;padding:10px 11px;color:var(--ink);font-size:12px;outline:none;transition:border .16s,box-shadow .16s}.field input{height:40px}.field textarea{resize:vertical;min-height:80px;line-height:1.8}.field input:focus,.field textarea:focus,.field select:focus{border-color:#83b89a;box-shadow:0 0 0 3px rgba(22,132,93,.08)}.field input::placeholder,.field textarea::placeholder{color:#b3bbb5}.field-full{grid-column:1/-1}.field-hint{font-weight:400;color:#99a39c;font-size:9px}.form-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:17px;padding-top:15px;border-top:1px solid #eff1ef}.save-state{font-size:10px;color:#869289;display:flex;align-items:center;gap:6px}.save-state:before{content:"";width:6px;height:6px;border-radius:50%;background:#6baa80}.completion-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:19px;box-shadow:var(--shadow);position:sticky;top:85px}.completion-head{display:flex;align-items:center;justify-content:space-between}.completion-head h3{font-family:'Tajawal',sans-serif;font-size:15px;margin:0}.completion-number{font-size:11px;color:var(--green);font-weight:700}.progress-track{height:7px;background:#edf1ed;border-radius:99px;overflow:hidden;margin:14px 0 8px}.progress-bar{height:100%;background:linear-gradient(90deg,#57a777,#16845d);border-radius:99px;transition:width .2s}.completion-card>p{font-size:10px;color:var(--muted);line-height:1.8;margin:0 0 13px}.missing-list{display:grid;gap:8px}.missing-item{font-size:10px;color:#68766d;display:flex;align-items:center;gap:7px}.missing-item:before{content:"";width:6px;height:6px;border:1px solid #bdc8bf;border-radius:50%}.complete-item{color:#4a7959}.complete-item:before{background:#6ca980;border-color:#6ca980}.plain-link{display:inline-flex;gap:6px;align-items:center;color:var(--green);font-size:11px;font-weight:600;text-decoration:none;overflow-wrap:anywhere}.plain-link:hover{text-decoration:underline}.chat-window{border:1px solid var(--line);border-radius:13px;background:#fafcf9;min-height:270px;max-height:430px;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:11px}.chat-msg{max-width:88%;padding:10px 12px;border-radius:13px;font-size:11px;line-height:1.85;white-space:pre-wrap;overflow-wrap:anywhere}.chat-msg.agent{background:#fff;border:1px solid #e7ece7;align-self:flex-start;border-top-right-radius:4px}.chat-msg.user{background:#eaf5ef;color:#345844;align-self:flex-end;border-top-left-radius:4px}.chat-time{display:block;font-size:8px;color:#9ba59d;margin-top:4px}.chat-compose{display:flex;gap:8px;margin-top:10px}.chat-compose input{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:11px;outline:none}.chat-compose input:focus{border-color:#83b89a}.chat-compose .button{min-width:42px;padding:0}.chat-compose svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.chat-disclaimer{font-size:9px;color:#919b94;line-height:1.7;margin:9px 2px 0}.toolbar-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}.search-box{position:relative;max-width:300px;flex:1}.search-box input{height:38px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:0 35px 0 10px;width:100%;font-size:11px;outline:none}.search-box [data-icon]{position:absolute;right:11px;top:10px;color:#9ba69e}.search-box svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}.prospect-list{display:grid;gap:11px}.prospect-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:var(--shadow)}.prospect-main{display:flex;align-items:flex-start;gap:12px}.prospect-avatar{width:39px;height:39px;display:grid;place-items:center;flex:none;background:#eff5f0;border-radius:12px;color:var(--green-dark);font-family:'Tajawal';font-weight:700;font-size:17px}.prospect-info{flex:1;min-width:0}.prospect-info h3{font-size:13px;margin:1px 0 4px}.prospect-info p{margin:0;font-size:10px;color:var(--muted);line-height:1.8}.prospect-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.tag{display:inline-flex;align-items:center;border:1px solid #e8ece8;background:#fafbfa;border-radius:99px;padding:4px 8px;color:#758178;font-size:9px}.source-line{font-size:9px;color:#839087;margin-top:9px;overflow-wrap:anywhere}.prospect-actions{display:flex;gap:7px;flex-wrap:wrap;border-top:1px solid #eff2ef;padding-top:11px;margin-top:12px}.status-select{height:32px;border:1px solid var(--line);border-radius:8px;background:#fff;color:#657269;padding:0 7px;font-size:9px;margin-right:auto}.empty-state{border:1px dashed #dbe3dc;border-radius:15px;background:#fbfdfb;padding:33px 20px;text-align:center}.empty-icon{width:48px;height:48px;border-radius:15px;background:#eef6f0;color:var(--green);display:grid;place-items:center;margin:0 auto 12px}.empty-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7}.empty-state h3{font-family:'Tajawal';font-size:15px;margin:0 0 5px}.empty-state p{max-width:390px;margin:0 auto 15px;color:var(--muted);font-size:10px;line-height:1.8}.search-shortcuts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.draft-list{display:grid;gap:13px}.draft-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px;box-shadow:var(--shadow)}.draft-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.draft-title{display:flex;gap:11px;min-width:0}.draft-badge-icon{width:35px;height:35px;border-radius:11px;background:#f1f6f2;color:var(--green);display:grid;place-items:center;flex:none}.draft-badge-icon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}.draft-title h3{font-size:13px;margin:0 0 4px}.draft-title p{font-size:10px;color:var(--muted);margin:0}.draft-preview{margin-top:13px;border:1px solid #eef1ee;border-radius:10px;background:#fafcf9;padding:12px;color:#4e5c53;font-size:10px;line-height:1.9;white-space:pre-wrap;max-height:180px;overflow:auto}.draft-subject{font-size:10px;color:#617067;margin-top:9px}.draft-subject strong{color:#46534a}.draft-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.manual-note{display:flex;align-items:flex-start;gap:8px;border-radius:9px;padding:9px 10px;background:#f7f8f7;color:#758078;font-size:9px;line-height:1.7;margin-top:11px}.manual-note svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;flex:none;margin-top:1px}.connection-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:17px;display:flex;align-items:flex-start;gap:13px;margin-bottom:12px}.connection-icon{width:40px;height:40px;border-radius:12px;background:#f0f5f1;color:var(--green);display:grid;place-items:center;flex:none}.connection-icon svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8}.connection-body{flex:1}.connection-head{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.connection-head h3{font-size:12px;margin:0}.connection-status{font-size:9px;border-radius:99px;padding:4px 8px;background:#f2f3f2;color:#7c867f}.connection-body p{font-size:10px;color:var(--muted);line-height:1.8;margin:7px 0}.connection-steps{display:grid;gap:7px;padding:0;margin:9px 0 0;list-style:none}.connection-steps li{display:flex;gap:8px;color:#68756c;font-size:10px;line-height:1.7}.connection-steps li:before{content:"";width:5px;height:5px;border-radius:50%;background:#a7b9ab;flex:none;margin-top:7px}.report-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}.report-stat{padding:16px;background:#fff;border:1px solid var(--line);border-radius:13px}.report-stat span{font-size:10px;color:var(--muted)}.report-stat strong{display:block;font-family:'Tajawal';font-size:25px;margin-top:5px}.report-stat small{color:#9aa49d;font-size:9px}.report-columns{display:grid;grid-template-columns:1fr 1fr;gap:15px}.event-list{display:grid}.event-row{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid #eff1ef}.event-row:last-child{border:0}.event-marker{width:8px;height:8px;border-radius:50%;background:#82b493;flex:none;margin-top:5px;box-shadow:0 0 0 4px #eff7f1}.event-row strong{display:block;font-size:10px}.event-row p{font-size:9px;color:var(--muted);margin:3px 0 0;line-height:1.7}.event-row time{font-size:8px;color:#9ba59e;display:block;margin-top:4px}.report-footnote{font-size:9px;color:#869188;line-height:1.8;margin-top:11px}.setup-strip{display:flex;gap:10px;align-items:center;padding:13px 15px;border:1px dashed #d7dfd8;border-radius:12px;color:#6d796f;background:#fbfcfb;font-size:10px;line-height:1.8;margin-top:13px}.setup-strip svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;flex:none}.toast-stack{position:fixed;z-index:40;bottom:24px;left:24px;display:grid;gap:8px;pointer-events:none}.toast{min-width:230px;max-width:min(390px,calc(100vw - 32px));padding:11px 14px;background:#1e3428;color:#fff;border-radius:11px;box-shadow:0 10px 30px rgba(14,35,24,.18);display:flex;align-items:center;gap:9px;font-size:11px;line-height:1.6;animation:toast-in .18s ease-out}.toast.error{background:#8f3d39}.toast svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;flex:none}@keyframes toast-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}.mobile-nav{display:none}.mobile-brand-mark{display:none}.modal{width:min(680px,calc(100vw - 28px));max-height:calc(100dvh - 30px);padding:21px;border:1px solid var(--line);border-radius:17px;box-shadow:0 24px 80px rgba(20,38,28,.22);color:var(--ink)}.modal::backdrop{background:rgba(20,34,27,.42);backdrop-filter:blur(2px)}.modal-small{width:min(440px,calc(100vw - 28px))}.modal-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.modal-header h2{font-family:'Tajawal';font-size:20px;margin:0}.modal-header .close-dialog{margin-top:0}.modal-note{font-size:10px;line-height:1.8;color:var(--muted);margin:10px 0 15px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field-wide{grid-column:1/-1}.check-field{display:flex;align-items:center;gap:8px;color:#69766e;font-size:10px}.check-field input{accent-color:var(--green)}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:17px;padding-top:14px;border-top:1px solid #edf0ed}.import-file-meta{font-size:10px;color:#58675d;padding:10px;border-radius:8px;background:#f7f9f7}.section-kicker{font-size:10px;color:#97a198;margin-bottom:10px}.sidebar-mobile-only{display:none}.source-chip{display:inline-flex;gap:5px;align-items:center;color:#809087;font-size:9px}.source-chip svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.8}.no-results{padding:22px;text-align:center;color:#869188;font-size:11px}
+@media(max-width:1100px){.sidebar{width:220px}.main-area{margin-right:220px}.content-wrap{padding-right:25px;padding-left:25px}.topbar{padding:0 25px}.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-object{margin-left:0;margin-right:8px}}
+@media(max-width:760px){body{font-size:13px}.sidebar{display:none}.main-area{margin:0;padding-bottom:75px}.topbar{height:58px;padding:0 15px}.breadcrumbs{gap:7px}.crumb-home{display:none}.crumb-separator{display:none}.mobile-brand-mark{width:26px;height:26px;display:grid;place-items:center;border-radius:8px;background:#e8f4ed;color:var(--green);font-family:'Tajawal';font-weight:800}.breadcrumbs strong{font-size:11px}.topbar-actions{gap:6px}.local-badge{font-size:9px;padding:6px 8px;margin-left:2px}.icon-button{width:32px;height:32px;border-radius:9px}.content-wrap{padding:20px 15px 25px}.page-heading{margin-bottom:16px;align-items:center}.page-heading h1{font-size:22px}.page-heading p{font-size:10px}.page-heading .button{min-height:36px;padding:0 10px;font-size:10px}.hero-panel{padding:20px 18px;min-height:186px;border-radius:17px;margin-bottom:13px}.hero-copy{max-width:100%}.hero-copy h1{font-size:22px;max-width:260px}.hero-copy p{max-width:290px;font-size:10px;line-height:1.75}.hero-object{position:absolute;left:-7px;bottom:-9px;transform:scale(.73);transform-origin:bottom left;opacity:.8}.hero-panel:after{left:-18%;top:26px;width:190px;height:190px}.hero-cta .button{min-height:35px;font-size:10px;padding:0 10px}.stats-grid{gap:9px;margin-bottom:13px}.stat-card{padding:12px;min-height:88px;border-radius:13px}.stat-top{font-size:9px}.stat-icon{width:27px;height:27px;border-radius:8px}.stat-value{font-size:23px;margin-top:6px}.stat-foot{font-size:8px}.dashboard-columns,.page-grid,.report-columns{grid-template-columns:1fr;gap:12px}.panel,.section-card{padding:15px;border-radius:14px}.panel-heading h2,.section-card h2{font-size:15px}.panel-heading{margin-bottom:11px}.quick-item{padding:9px}.quick-icon{width:31px;height:31px}.quick-item strong{font-size:10px}.quick-item small{font-size:9px}.status-row{padding:10px 0}.completion-card{position:static}.field-grid{grid-template-columns:1fr;gap:12px}.field-full{grid-column:auto}.field input,.field textarea,.field select{font-size:12px}.form-actions{align-items:flex-start;flex-direction:column}.toolbar-row{align-items:stretch;flex-direction:column}.toolbar-row .button{width:100%}.search-box{max-width:none}.prospect-card{padding:13px}.prospect-actions .button{font-size:9px;padding:0 8px;min-height:31px}.status-select{margin-right:0}.draft-card{padding:14px}.draft-actions .button{flex:1 1 140px;font-size:10px;padding:0 8px}.report-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.report-stat{padding:13px}.report-stat strong{font-size:22px}.connection-card{padding:13px;gap:10px}.connection-icon{width:35px;height:35px}.completion-card{margin-bottom:12px}.toast-stack{bottom:86px;left:12px;right:12px;justify-items:start}.toast{min-width:0}.mobile-nav{position:fixed;inset:auto 0 0;z-index:20;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:7px 5px calc(7px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);gap:2px}.mobile-nav-item{border:0;background:transparent;color:#89938c;display:grid;justify-items:center;align-content:center;gap:3px;padding:4px 0;border-radius:9px}.mobile-nav-item svg{width:18px;height:18px}.mobile-nav-item small{font-size:8px}.mobile-nav-item.active{color:var(--green);font-weight:700}.modal{padding:16px}.form-grid{grid-template-columns:1fr}.field-wide{grid-column:auto}.modal-actions .button{flex:1}.status-row p{font-size:9px}}
+@media(max-width:390px){.content-wrap{padding-right:12px;padding-left:12px}.topbar{padding:0 12px}.local-badge{font-size:8px}.hero-panel{min-height:204px}.hero-object{opacity:.45}.stat-card{padding:10px}.hero-copy h1{font-size:20px}.page-heading h1{font-size:20px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+.ui-icon{display:inline-block;width:17px;height:17px;flex:none;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+</style>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="التنقل الرئيسي">
+        <a class="brand" href="#dashboard" data-view="dashboard" aria-label="مساحة، لوحة التحكم">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M6 12.5 15 7l9 5.5v10L15 28l-9-5.5z"/><path d="m17 12.5 9-5.5 9 5.5v10L26 28l-9-5.5z"/><path d="M13 26.5 22 21l9 5.5v7L22 39l-9-5.5z"/></svg></span>
+          <span><strong>مِساحة</strong><small>وكيل المبيعات الذكي</small></span>
+        </a>
+        <div class="sidebar-caption">مساحة العمل</div>
+        <nav class="main-nav">
+          <button class="nav-item active" data-view="dashboard"><span class="nav-icon" data-icon="grid"></span><span>نظرة عامة</span></button>
+          <button class="nav-item" data-view="profile"><span class="nav-icon" data-icon="layers"></span><span>ملف النشاط</span><span class="nav-indicator" id="profile-indicator"></span></button>
+          <button class="nav-item" data-view="prospects"><span class="nav-icon" data-icon="search"></span><span>الجهات المحتملة</span><span class="nav-count" id="prospect-count">0</span></button>
+          <button class="nav-item" data-view="drafts"><span class="nav-icon" data-icon="file"></span><span>مسودات العروض</span><span class="nav-count" id="draft-count">0</span></button>
+          <button class="nav-item" data-view="integrations"><span class="nav-icon" data-icon="link"></span><span>الربط والإعدادات</span><span class="status-dot offline"></span></button>
+          <button class="nav-item" data-view="reports"><span class="nav-icon" data-icon="chart"></span><span>التقارير</span></button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="privacy-card"><span class="privacy-icon" data-icon="shield"></span><div><strong>خصوصيتك أولًا</strong><p>البيانات محفوظة في هذا المتصفح فقط.</p></div></div>
+          <div class="user-mini"><span class="avatar">ع</span><span><strong>عمر</strong><small>مساحة عمل تجريبية</small></span><span class="mini-dots">•••</span></div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <div class="breadcrumbs"><span class="mobile-brand-mark" aria-hidden="true">م</span><span class="crumb-home">مساحة العمل</span><span class="crumb-separator">/</span><strong id="current-page">نظرة عامة</strong></div>
+          <div class="topbar-actions">
+            <span class="local-badge"><span></span> نموذج أولي محلي</span>
+            <button class="icon-button" id="export-top" title="تصدير البيانات احتياطيًا" aria-label="تصدير البيانات احتياطيًا"><span data-icon="download"></span></button>
+            <button class="icon-button" id="import-top" title="استيراد البيانات" aria-label="استيراد البيانات"><span data-icon="upload"></span></button>
+            <input type="file" id="import-file" accept="application/json,.json" hidden />
+          </div>
+        </header>
+
+        <div class="content-wrap" id="content" tabindex="-1"></div>
+        <nav class="mobile-nav" aria-label="التنقل للهاتف">
+          <button class="mobile-nav-item active" data-view="dashboard"><span data-icon="grid"></span><small>الرئيسية</small></button>
+          <button class="mobile-nav-item" data-view="prospects"><span data-icon="search"></span><small>الجهات</small></button>
+          <button class="mobile-nav-item" data-view="drafts"><span data-icon="file"></span><small>المسودات</small></button>
+          <button class="mobile-nav-item" data-view="reports"><span data-icon="chart"></span><small>التقارير</small></button>
+          <button class="mobile-nav-item" data-view="integrations"><span data-icon="link"></span><small>الربط</small></button>
+        </nav>
+      </main>
+    </div>
+
+    <div id="toast-stack" class="toast-stack" aria-live="polite" aria-atomic="false"></div>
+    <dialog id="lead-dialog" class="modal">
+      <form id="lead-form" method="dialog">
+        <div class="modal-header"><div><span class="eyebrow">إضافة جهة محتملة</span><h2>سجّل جهة جديدة</h2></div><button class="icon-button close-dialog" type="button" aria-label="إغلاق" data-icon="close"></button></div>
+        <p class="modal-note">أدخل بيانات منشورة علنًا فقط، وأضف رابط الصفحة التي أخذت منها المعلومات.</p>
+        <div class="form-grid">
+          <label class="field"><span>اسم الجهة <b>*</b></span><input name="name" required maxlength="120" placeholder="مثال: مدارس الأفق الأهلية" /></label>
+          <label class="field"><span>القطاع</span><input name="sector" maxlength="80" placeholder="مدرسة، شركة، إعلان..." /></label>
+          <label class="field"><span>الدولة</span><input name="country" maxlength="80" placeholder="الدولة أو المدينة" /></label>
+          <label class="field"><span>البريد المنشور</span><input name="email" type="email" maxlength="160" placeholder="name@example.com" dir="ltr" /></label>
+          <label class="field"><span>رقم الهاتف / واتساب المنشور</span><input name="phone" type="tel" maxlength="40" placeholder="+966 5X XXX XXXX" dir="ltr" /></label>
+          <label class="field"><span>لغة المسودة</span><select name="language"><option value="ar" selected>العربية</option><option value="en">English</option></select></label>
+          <label class="field field-wide"><span>مصدر البيانات المنشور (رابط) <b>*</b></span><input name="source" type="url" required maxlength="500" placeholder="https://..." dir="ltr" /></label>
+          <label class="field field-wide"><span>ملاحظات</span><textarea name="notes" rows="3" maxlength="500" placeholder="سبب ملاءمة الجهة أو معلومات أخرى..."></textarea></label>
+          <label class="check-field field-wide"><input type="checkbox" name="publicData" required /><span>أؤكد أن بيانات التواصل مدرجة علنًا على المصدر المذكور.</span></label>
+        </div>
+        <div class="modal-actions"><button class="button button-secondary close-dialog" type="button">إلغاء</button><button class="button button-primary" type="submit">حفظ الجهة</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="import-dialog" class="modal modal-small">
+      <div class="modal-header"><div><span class="eyebrow">استعادة نسخة</span><h2>استبدال البيانات الحالية؟</h2></div><button class="icon-button close-dialog" type="button" aria-label="إغلاق" data-icon="close"></button></div>
+      <p class="modal-note">سيستبدل الاستيراد بيانات مساحة العمل المحفوظة في هذا المتصفح بالبيانات الموجودة في الملف المختار. صدّر نسخة احتياطية أولًا إن أردت الاحتفاظ بالحالة الحالية.</p>
+      <div class="import-file-meta" id="import-file-meta"></div>
+      <div class="modal-actions"><button class="button button-secondary close-dialog" type="button">إلغاء</button><button class="button button-danger" id="confirm-import" type="button">استبدال واستيراد</button></div>
+    </dialog>
+
+    <script>
+const STORAGE_KEY = 'masaha.sales-agent.prototype.v1';
+const APP_ID = 'masaha-sales-agent';
+const viewNames = {
+  dashboard: 'نظرة عامة',
+  profile: 'ملف النشاط',
+  prospects: 'الجهات المحتملة',
+  drafts: 'مسودات العروض',
+  integrations: 'الربط والإعدادات',
+  reports: 'التقارير',
+};
+const svgIcons = {
+  grid: '<rect x="3.5" y="3.5" width="7" height="7" rx="1.4"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.4"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.4"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.4"/>',
+  layers: '<path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 16 9 5 9-5"/>',
+  search: '<circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/>',
+  file: '<path d="M14 3.5H6.5A1.5 1.5 0 0 0 5 5v14a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 19V8.5L14 3.5Z"/><path d="M14 3.5V9h5M8 13h7M8 16.5h7"/>',
+  link: '<path d="M10 13.5a4.4 4.4 0 0 0 6.3 0l3-3a4.45 4.45 0 0 0-6.3-6.3l-1.7 1.7"/><path d="M14 10.5a4.4 4.4 0 0 0-6.3 0l-3 3A4.45 4.45 0 0 0 11 19.8l1.7-1.7"/>',
+  chart: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+  shield: '<path d="M12 3 20 6v5.5c0 5-3.4 8-8 9.5-4.6-1.5-8-4.5-8-9.5V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/>',
+  download: '<path d="M12 3v11m0 0 4-4m-4 4-4-4"/><path d="M4 16.5v3A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5v-3"/>',
+  upload: '<path d="M12 15V4m0 0L8 8m4-4 4 4"/><path d="M4 16.5v3A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5v-3"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  arrow: '<path d="M5 12h14m-6-6 6 6-6 6"/>',
+  check: '<path d="m5 12 4 4L19 6"/>',
+  alert: '<path d="M12 3.5 21 20H3L12 3.5Z"/><path d="M12 9v4.5m0 3h.01"/>',
+  school: '<path d="m3 9 9-5 9 5-9 5-9-5Z"/><path d="M7 11.5V17c3 2.3 7 2.3 10 0v-5.5M21 9v6"/>',
+  briefcase: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18m-11 0v2h4v-2"/>',
+  message: '<path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8.5 8.5 0 0 1-4-.9L4 20l1.2-3.2A7 7 0 0 1 4 12c0-4.1 3.6-7.5 8-7.5s8 3.1 8 7Z"/>',
+  close: '<path d="m6 6 12 12M18 6 6 18"/>',
+  send: '<path d="m21 3-7.5 18-3.6-7.9L2 9.5 21 3Z"/><path d="M10 13 21 3"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  external: '<path d="M14 4h6v6m0-6-9 9"/><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>',
+  mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>',
+  phone: '<path d="M7 3H5a2 2 0 0 0-2 2c0 8.8 7.2 16 16 16a2 2 0 0 0 2-2v-2l-4-2-2 2c-3.1-1.2-5.8-3.9-7-7l2-2-2-4Z"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/>',
+};
+
+const defaultProfile = {
+  businessName: '',
+  productDescription: 'بيع وتأجير غرف ثلاثية الأبعاد جاهزة للفصول الدراسية والمكاتب والمتاجر، مع أفاتار ولوحات وأزرار تفاعلية.',
+  pricingNotes: '',
+  sectors: 'المدارس الأهلية، الشركات، الإعلان',
+  countries: 'جميع الدول — أولوية لدول الخليج',
+  languages: 'العربية، الإنجليزية',
+  companyDetails: '',
+  customerPhone: '+967 737 219 181',
+  customerEmail: 'omarebrah2060@gmail.com',
+  offerUrl: 'https://wkaltyomar.vercel.app/#order',
+  extraDetails: '',
+};
+
+function newDefaultState() {
+  return {
+    schemaVersion: 1,
+    profile: { ...defaultProfile },
+    prospects: [],
+    drafts: [],
+    chat: [{ id: makeId(), role: 'agent', text: 'مرحبًا عمر، أنا مساعد مساحة التجريبي. أستطيع مساعدتك في ترتيب معلومات العرض. أخبرني بما تعرفه، أو اكتب مثلًا: «السعر: يحدد حسب مساحة الغرفة». لا يلزم إدخال أي كلمة مرور أو رمز تحقق هنا.', at: new Date().toISOString() }],
+    events: [],
+    metrics: { draftsPrepared: 0, channelsOpened: 0 },
+    errors: [],
+    savedAt: new Date().toISOString(),
+  };
+}
+
+function makeId() {
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 9)}`;
+}
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return newDefaultState();
+    const parsed = JSON.parse(raw);
+    if (!parsed || parsed.schemaVersion !== 1 || typeof parsed.profile !== 'object') return newDefaultState();
+    return {
+      ...newDefaultState(),
+      ...parsed,
+      profile: { ...defaultProfile, ...(parsed.profile || {}) },
+      prospects: Array.isArray(parsed.prospects) ? parsed.prospects : [],
+      drafts: Array.isArray(parsed.drafts) ? parsed.drafts : [],
+      chat: Array.isArray(parsed.chat) && parsed.chat.length ? parsed.chat : newDefaultState().chat,
+      events: Array.isArray(parsed.events) ? parsed.events : [],
+      metrics: {
+        draftsPrepared: Number.isSafeInteger(parsed.metrics?.draftsPrepared) && parsed.metrics.draftsPrepared >= 0 ? parsed.metrics.draftsPrepared : (Array.isArray(parsed.drafts) ? parsed.drafts.length : 0),
+        channelsOpened: Number.isSafeInteger(parsed.metrics?.channelsOpened) && parsed.metrics.channelsOpened >= 0 ? parsed.metrics.channelsOpened : (Array.isArray(parsed.events) ? parsed.events.filter((item) => item?.type === 'channel-open').length : 0),
+      },
+      errors: Array.isArray(parsed.errors) ? parsed.errors : [],
+    };
+  } catch (error) {
+    console.warn('Could not read local prototype data.', error);
+    return newDefaultState();
+  }
+}
+
+let state = loadState();
+let currentView = 'dashboard';
+let importCandidate = null;
+let searchTerm = '';
+const content = document.querySelector('#content');
+
+function icon(name, cls = '') {
+  return `<svg class="ui-icon ${cls}" viewBox="0 0 24 24" aria-hidden="true">${svgIcons[name] || svgIcons.info}</svg>`;
+}
+
+document.querySelectorAll('[data-icon]').forEach((el) => {
+  const name = el.dataset.icon;
+  el.innerHTML = icon(name);
+  if (el.classList.contains('nav-item')) el.classList.add('has-svg');
+});
+
+function escapeHtml(value = '') {
+  return String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+}
+
+function safeHttpUrl(value) {
+  try {
+    const url = new URL(value);
+    return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
+  } catch {
+    return '';
+  }
+}
+
+function formatDate(iso, withTime = true) {
+  if (!iso) return '—';
+  try {
+    return new Intl.DateTimeFormat('ar', withTime ? { dateStyle: 'medium', timeStyle: 'short' } : { dateStyle: 'medium' }).format(new Date(iso));
+  } catch {
+    return '—';
+  }
+}
+
+function logEvent(type, label, detail = '') {
+  state.events.unshift({ id: makeId(), type, label, detail, at: new Date().toISOString() });
+  state.events = state.events.slice(0, 100);
+}
+
+function logError(label, detail = '') {
+  const item = { id: makeId(), label, detail: String(detail).slice(0, 250), at: new Date().toISOString() };
+  state.errors.unshift(item);
+  state.errors = state.errors.slice(0, 30);
+  logEvent('error', label, item.detail);
+  persist(false);
+}
+
+function persist(announce = false) {
+  state.savedAt = new Date().toISOString();
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    updateNavCounts();
+    if (announce) toast('حُفظت بيانات مساحة العمل على هذا المتصفح.', 'success');
+  } catch (error) {
+    state.errors.unshift({ id: makeId(), label: 'تعذّر حفظ البيانات محليًا', detail: String(error?.message || 'التخزين المحلي غير متاح').slice(0, 250), at: new Date().toISOString() });
+    state.errors = state.errors.slice(0, 30);
+    toast('تعذّر الحفظ في هذا المتصفح. صدّر نسخة احتياطية أو راجع إعدادات التخزين.', 'error');
+  }
+}
+
+function toast(message, type = 'success') {
+  const stack = document.querySelector('#toast-stack');
+  const node = document.createElement('div');
+  node.className = `toast ${type === 'error' ? 'error' : ''}`;
+  node.innerHTML = `${icon(type === 'error' ? 'alert' : 'check')}<span>${escapeHtml(message)}</span>`;
+  stack.append(node);
+  window.setTimeout(() => node.remove(), 4200);
+}
+
+function missingProfile() {
+  const p = state.profile;
+  const rows = [
+    ['اسم النشاط التجاري', p.businessName],
+    ['وصف المنتج أو الخدمة', p.productDescription],
+    ['السعر أو آلية طلب السعر', p.pricingNotes],
+    ['القطاعات المستهدفة', p.sectors],
+    ['الدول المستهدفة', p.countries],
+    ['اللغات', p.languages],
+  ];
+  return rows.map(([label, value]) => ({ label, done: String(value || '').trim().length > 0 }));
+}
+
+function completionPercent() {
+  const items = missingProfile();
+  return Math.round((items.filter((item) => item.done).length / items.length) * 100);
+}
+
+function updateNavCounts() {
+  const prospects = document.querySelector('#prospect-count');
+  const drafts = document.querySelector('#draft-count');
+  if (prospects) prospects.textContent = state.prospects.length;
+  if (drafts) drafts.textContent = state.drafts.length;
+  const indicator = document.querySelector('#profile-indicator');
+  if (indicator) indicator.style.display = completionPercent() === 100 ? 'none' : 'block';
+}
+
+function header(title, subtitle, action = '') {
+  return `<div class="page-heading"><div><span class="eyebrow">مساحة العمل · وكيل المبيعات</span><h1>${title}</h1><p>${subtitle}</p></div>${action}</div>`;
+}
+
+function statCard(label, value, foot, iconName) {
+  return `<div class="stat-card"><div class="stat-top"><span>${label}</span><span class="stat-icon">${icon(iconName)}</span></div><div class="stat-value">${value}</div><div class="stat-foot">${foot}</div></div>`;
+}
+
+function renderDashboard() {
+  const p = state.profile;
+  const miss = missingProfile();
+  const missing = miss.filter((item) => !item.done);
+  const recent = state.events.slice(0, 4);
+  return `
+    <section class="hero-panel">
+      <div class="hero-copy">
+        <span class="eyebrow">مبيعات تفاعلية، بقرارك</span>
+        <h1>حوّل الغرفة إلى تجربة<br>تُعرَف وتُعاش.</h1>
+        <p>نظّم عرض غرفك ثلاثية الأبعاد، جهّز الجهات المناسبة، وراجع كل رسالة بنفسك قبل فتح تطبيق التواصل.</p>
+        <div class="hero-cta"><button class="button button-light" data-go="profile">أكمل ملف النشاط ${icon('arrow')}</button><button class="button button-glass" data-go="prospects">استكشف الجهات</button></div>
+      </div>
+      <div class="hero-object" aria-hidden="true"><span class="room-box one"></span><span class="room-box two"></span><span class="room-box three"></span></div>
+    </section>
+
+    <div class="stats-grid">
+      ${statCard('جهات مسجلة', state.prospects.length, 'مضافة يدويًا مع مصدرها', 'school')}
+      ${statCard('مسودات جاهزة', state.drafts.length, 'لمراجعتك قبل فتح التطبيق', 'file')}
+      ${statCard('رسائل مرسلة', '0', 'لا يوجد إرسال آلي أو تتبع', 'send')}
+      ${statCard('اكتمال ملف النشاط', `${completionPercent()}%`, 'معلومات محفوظة محليًا', 'layers')}
+    </div>
+
+    <div class="dashboard-columns">
+      <section class="panel">
+        <div class="panel-heading"><div><h2>خطوتك التالية</h2><p>كل شيء جاهز عندما تراجعه بنفسك.</p></div>${icon('arrow')}</div>
+        <div class="quick-list">
+          <button class="quick-item" data-go="profile"><span class="quick-icon">${icon('layers')}</span><span><strong>${missing.length ? `أكمل بيانات النشاط (${missing.length} حقول)` : 'راجع ملف نشاطك'}</strong><small>${missing.length ? escapeHtml(missing.slice(0, 2).map((x) => x.label).join('، ')) : 'تأكد من وصف الخدمات وآلية التسعير.'}</small></span><span class="quick-arrow">←</span></button>
+          <button class="quick-item" data-go="prospects"><span class="quick-icon">${icon('search')}</span><span><strong>سجّل جهة محتملة</strong><small>أضف بيانات منشورة علنًا ورابط مصدرها.</small></span><span class="quick-arrow">←</span></button>
+          <button class="quick-item" data-go="drafts"><span class="quick-icon">${icon('message')}</span><span><strong>راجع مسودات التواصل</strong><small>افتح wa.me أو mailto للمراجعة اليدوية فقط.</small></span><span class="quick-arrow">←</span></button>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="panel-heading"><div><h2>حالة الاتصال</h2><p>لا توجد خدمات خارجية متصلة حاليًا.</p></div><span class="tag">غير متصل</span></div>
+        <div class="status-row"><span class="status-symbol">${icon('search')}</span><div><strong>البحث عن الجهات</strong><p>روابط بحث عامة وإضافة يدوية فقط؛ لا يوجد بحث آلي أو بيانات مستوردة.</p></div></div>
+        <div class="status-row"><span class="status-symbol">${icon('message')}</span><div><strong>واتساب والبريد</strong><p>تُفتح مسودتك في التطبيق على جهازك. الإرسال منك يدويًا ولا نسجل نتيجة الإرسال.</p></div></div>
+        <div class="status-row"><span class="status-symbol">${icon('shield')}</span><div><strong>حفظ البيانات</strong><p>محلي في هذا المتصفح فقط. استخدم التصدير للاحتفاظ بنسخة احتياطية.</p></div></div>
+      </section>
+    </div>
+    <section class="panel" style="margin-top:16px">
+      <div class="panel-heading"><div><h2>آخر النشاط</h2><p>سجل محلي لما أُعد أو عُدّل داخل النموذج.</p></div><button class="text-link" data-go="reports">عرض التقارير</button></div>
+      ${recent.length ? `<div class="event-list">${recent.map(renderEventRow).join('')}</div>` : `<div class="no-results">ستظهر هنا الجهات والمسودات التي تضيفها وإجراءاتك داخل النموذج.</div>`}
+    </section>
+    ${p.businessName ? `<p class="section-kicker" style="text-align:left;margin-top:12px">مساحة العمل: ${escapeHtml(p.businessName)}</p>` : ''}
+  `;
+}
+
+function renderProfile() {
+  const p = state.profile;
+  const checks = missingProfile();
+  const done = checks.filter((item) => item.done).length;
+  return `${header('ملف النشاط', 'أخبر الوكيل بما تبيع ولمن تقدمه؛ هذه المعلومات تُحفظ في متصفحك فقط.')}
+    <div class="page-grid">
+      <form id="profile-form">
+        <section class="section-card">
+          <div class="section-title"><div><h2>معلومات العرض</h2><p>كلما كان الوصف أوضح، أصبحت المسودات الأولية أقرب لاحتياجك.</p></div></div>
+          <div class="field-grid">
+            <label class="field"><span>اسم الشركة أو النشاط التجاري</span><input name="businessName" maxlength="120" value="${escapeHtml(p.businessName)}" placeholder="أدخل الاسم الذي يظهر للعملاء" /></label>
+            <label class="field"><span>اسم المنتج أو الخدمة</span><input name="productName" maxlength="120" value="${escapeHtml(p.productName || 'غرف ثلاثية الأبعاد تفاعلية')}" placeholder="اسم مختصر للخدمة" /></label>
+            <label class="field field-full"><span>وصف المنتجات والخدمات <b>*</b></span><textarea name="productDescription" rows="4" maxlength="1200" placeholder="ما الذي تبيعه أو تؤجره؟ ما المزايا؟">${escapeHtml(p.productDescription)}</textarea></label>
+            <label class="field field-full"><span>السعر أو آلية طلب السعر <b>*</b></span><textarea name="pricingNotes" rows="2" maxlength="500" placeholder="مثال: السعر حسب مساحة الغرفة، ويُرسل عرض السعر بعد معرفة المتطلبات.">${escapeHtml(p.pricingNotes)}</textarea><small class="field-hint">لا يؤكد النموذج أي سعر للعميل؛ يُستخدم هذا الحقل لفهم آلية التسعير فقط.</small></label>
+          </div>
+        </section>
+        <section class="section-card">
+          <div class="section-title"><div><h2>الجمهور والتغطية</h2><p>حدّد من تريد الوصول إليه وأي اللغات تناسبه.</p></div></div>
+          <div class="field-grid">
+            <label class="field"><span>القطاعات المستهدفة <b>*</b></span><textarea name="sectors" rows="3" maxlength="500" placeholder="مدارس أهلية، شركات، إعلان...">${escapeHtml(p.sectors)}</textarea></label>
+            <label class="field"><span>الدول والمدن المستهدفة <b>*</b></span><textarea name="countries" rows="3" maxlength="500" placeholder="الخليج أولًا، ثم جميع الدول...">${escapeHtml(p.countries)}</textarea></label>
+            <label class="field field-full"><span>لغات العرض والتواصل <b>*</b></span><input name="languages" maxlength="200" value="${escapeHtml(p.languages)}" placeholder="العربية، الإنجليزية، ..." /></label>
+          </div>
+        </section>
+        <section class="section-card">
+          <div class="section-title"><div><h2>معلومات الشركة والتواصل</h2><p>بيانات التواصل أدناه تظهر كقنوات عملك في المسودات.</p></div></div>
+          <div class="field-grid">
+            <label class="field field-full"><span>معلومات إضافية عن الشركة</span><textarea name="companyDetails" rows="3" maxlength="800" placeholder="نبذة، خبرات، أسلوب تنفيذ، مدة تجهيز...">${escapeHtml(p.companyDetails)}</textarea></label>
+            <label class="field"><span>واتساب العملاء</span><input name="customerPhone" type="tel" dir="ltr" value="${escapeHtml(p.customerPhone)}" placeholder="+967 ..." /></label>
+            <label class="field"><span>البريد الإلكتروني للعملاء</span><input name="customerEmail" type="email" dir="ltr" value="${escapeHtml(p.customerEmail)}" placeholder="you@example.com" /></label>
+            <label class="field field-full"><span>موقع العرض والطلب</span><input name="offerUrl" type="url" dir="ltr" value="${escapeHtml(p.offerUrl)}" placeholder="https://..." /></label>
+          </div>
+          <div class="form-actions"><span class="save-state">الحفظ تلقائي على هذا الجهاز</span><button class="button button-primary" type="submit">حفظ التغييرات</button></div>
+        </section>
+      </form>
+      <aside>
+        <section class="completion-card"><div class="completion-head"><h3>اكتمال الملف</h3><span class="completion-number">${done} من ${checks.length}</span></div><div class="progress-track"><div class="progress-bar" style="width:${completionPercent()}%"></div></div><p>أكمل المعلومات الأساسية قبل تجهيز عرض مناسب. لن يُرسل أي شيء من هذا النموذج.</p><div class="missing-list">${checks.map((item) => `<div class="missing-item ${item.done ? 'complete-item' : ''}">${escapeHtml(item.label)} ${item.done ? '✓' : ''}</div>`).join('')}</div></section>
+        <section class="section-card" style="margin-top:14px"><span class="eyebrow">مساعدك التجريبي</span><h2>أخبره بما ينقص</h2><p class="muted" style="font-size:10px;line-height:1.8">اكتب «السعر: ...» أو «اسم الشركة: ...» داخل الدردشة وسأضع القيمة في الحقل المناسب. الرسائل غير المصنفة تحفظ كملاحظات إضافية.</p><button class="button button-secondary" style="width:100%;margin-top:9px" data-go="chat">افتح الدردشة العربية ${icon('arrow')}</button></section>
+        <section class="callout warning" style="margin-top:14px">${icon('info')}<div><strong>تخزين محلي</strong><p>مسح بيانات المتصفح أو تغيير الجهاز قد يزيل هذه المعلومات؛ صدّر نسخة JSON دورية.</p></div></section>
+      </aside>
+    </div>`;
+}
+
+function renderChat() {
+  return `${header('الدردشة العربية', 'زوّد المساعد بالمعلومات، وسيشير إلى ما لا يزال ناقصًا في ملفك.')}
+    <div class="page-grid">
+      <section class="section-card">
+        <div class="panel-heading"><div><h2>محادثتك مع الوكيل</h2><p>نموذج إرشادي محلي؛ لا يستخدم نموذج ذكاء اصطناعي متصلًا.</p></div><span class="tag">تجريبي</span></div>
+        <div class="chat-window" id="chat-window">${state.chat.map((message) => `<div class="chat-msg ${message.role === 'user' ? 'user' : 'agent'}">${escapeHtml(message.text)}<span class="chat-time">${formatDate(message.at)}</span></div>`).join('')}</div>
+        <form class="chat-compose" id="chat-form"><input name="message" maxlength="800" autocomplete="off" placeholder="اكتب معلومة أو اسأل عن البيانات الناقصة..." aria-label="اكتب رسالة للوكيل" required /><button class="button button-primary" type="submit" aria-label="إرسال الرسالة">${icon('send')}</button></form>
+        <p class="chat-disclaimer">الدردشة تجريبية ومحلية. لا تكتب كلمات مرور أو رموز تحقق أو بيانات خاصة لا تحتاجها المسودة.</p>
+      </section>
+      <aside><section class="completion-card"><div class="completion-head"><h3>ما الذي ينقص الملف؟</h3><span class="completion-number">${completionPercent()}%</span></div><div class="progress-track"><div class="progress-bar" style="width:${completionPercent()}%"></div></div><div class="missing-list">${missingProfile().map((item) => `<div class="missing-item ${item.done ? 'complete-item' : ''}">${escapeHtml(item.label)} ${item.done ? '✓' : ''}</div>`).join('')}</div><button class="button button-secondary" style="width:100%;margin-top:15px" data-go="profile">تعديل ملف النشاط</button></section></aside>
+    </div>`;
+}
+
+function renderProspectCard(prospect) {
+  const source = safeHttpUrl(prospect.source);
+  const email = prospect.email ? `<span class="tag">${icon('mail')} ${escapeHtml(prospect.email)}</span>` : '';
+  const phone = prospect.phone ? `<span class="tag">${icon('phone')} ${escapeHtml(prospect.phone)}</span>` : '';
+  const languageTag = `<span class="tag">${prospect.language === 'en' ? 'English draft' : 'مسودة عربية'}</span>`;
+  const options = [['new', 'جديدة'], ['followup', 'متابعة مطلوبة'], ['replied', 'رد مسجل يدويًا'], ['contacted', 'تواصل يدوي مسجل']];
+  return `<article class="prospect-card"><div class="prospect-main"><span class="prospect-avatar">${escapeHtml((prospect.name || '?').trim().slice(0, 1))}</span><div class="prospect-info"><h3>${escapeHtml(prospect.name)}</h3><p>${[prospect.sector, prospect.country].filter(Boolean).map(escapeHtml).join(' · ') || 'قطاع/دولة غير محددة'}</p><div class="prospect-meta">${email}${phone}<span class="tag">إضافة يدوية</span>${languageTag}</div></div></div><div class="source-line">مصدر منشور: ${source ? `<a class="plain-link" href="${escapeHtml(source)}" target="_blank" rel="noopener noreferrer">فتح المصدر ${icon('external')}</a>` : 'رابط مصدر غير صالح'}</div>${prospect.notes ? `<p class="muted" style="font-size:10px;line-height:1.7;margin:8px 0 0">${escapeHtml(prospect.notes)}</p>` : ''}<div class="prospect-actions"><button class="button button-primary button-small" data-action="create-draft" data-id="${escapeHtml(prospect.id)}">تجهيز مسودة ${icon('file')}</button><select class="status-select" aria-label="تحديث حالة الجهة" data-prospect-status="${escapeHtml(prospect.id)}">${options.map(([value, label]) => `<option value="${value}" ${prospect.status === value ? 'selected' : ''}>${label}</option>`).join('')}</select></div></article>`;
+}
+
+function renderProspects() {
+  const matches = state.prospects.filter((prospect) => `${prospect.name} ${prospect.sector} ${prospect.country} ${prospect.email}`.toLowerCase().includes(searchTerm.toLowerCase()));
+  const querySchool = encodeURIComponent('مدارس أهلية في الخليج البريد الإلكتروني');
+  const queryCompany = encodeURIComponent('شركات تصميم تعليم رقمي الخليج');
+  return `${header('الجهات المحتملة', 'ابحث يدويًا عن بيانات منشورة علنًا، وسجّل رابط المصدر قبل إعداد أي تواصل.', `<button class="button button-primary" data-action="add-prospect">${icon('plus')} إضافة جهة</button>`)}
+    <div class="callout warning" style="margin-bottom:14px">${icon('info')}<div><strong>لا يوجد بحث آلي متصل</strong><p>الأزرار التالية تفتح بحثًا عامًا خارج مساحة العمل. راجع البيانات وسياسات الخصوصية، ثم أضف الجهة ومصدرها بنفسك.</p></div></div>
+    <section class="section-card">
+      <div class="toolbar-row"><div><h2 style="font-family:'Tajawal';font-size:16px;margin:0">دليل الجهات الذي سجلته</h2><p class="muted" style="font-size:10px;margin:4px 0 0">${state.prospects.length} جهة محفوظة محليًا · لا نتائج مستوردة</p></div><div class="search-box"><span data-icon="search">${icon('search')}</span><input id="prospect-filter" type="search" value="${escapeHtml(searchTerm)}" placeholder="ابحث في الجهات المسجلة..." aria-label="بحث في الجهات المسجلة" /></div></div>
+      ${matches.length ? `<div class="prospect-list">${matches.map(renderProspectCard).join('')}</div>` : state.prospects.length ? `<div class="no-results">لا توجد جهات تطابق البحث.</div>` : `<div class="empty-state"><span class="empty-icon">${icon('school')}</span><h3>لم تُسجّل جهات بعد</h3><p>استخدم بحثًا عامًا، تحقق من أن بيانات التواصل منشورة، ثم أضف رابط المصدر حتى تستطيع مراجعة أصل المعلومة.</p><button class="button button-primary" data-action="add-prospect">إضافة أول جهة ${icon('plus')}</button></div>`}
+      <div class="search-shortcuts"><a class="button button-secondary button-small" href="https://www.google.com/search?q=${querySchool}" target="_blank" rel="noopener noreferrer">${icon('external')} بحث عام عن مدارس</a><a class="button button-secondary button-small" href="https://www.google.com/search?q=${queryCompany}" target="_blank" rel="noopener noreferrer">${icon('external')} بحث عام عن شركات</a></div>
+    </section>`;
+}
+
+function renderDraftCard(draft) {
+  return `<article class="draft-card"><div class="draft-top"><div class="draft-title"><span class="draft-badge-icon">${icon('file')}</span><div><h3>${escapeHtml(draft.orgName)}</h3><p>مسودة ${escapeHtml(draft.createdDate || formatDate(draft.createdAt, false))} · ${escapeHtml(draft.sector || 'القطاع غير محدد')} · ${draft.language === 'en' ? 'English' : 'العربية'}</p></div></div><span class="tag">جاهزة للمراجعة</span></div><div class="draft-subject"><strong>${draft.language === 'en' ? 'Subject:' : 'الموضوع:'}</strong> ${escapeHtml(draft.subject)}</div><div class="draft-preview">${escapeHtml(draft.body)}</div><div class="draft-actions"><button class="button button-secondary" data-action="open-whatsapp" data-id="${escapeHtml(draft.id)}" ${draft.phone ? '' : 'disabled'}>${icon('message')} معاينة وفتح في واتساب</button><button class="button button-secondary" data-action="open-email" data-id="${escapeHtml(draft.id)}" ${draft.email ? '' : 'disabled'}>${icon('mail')} فتح في البريد الإلكتروني</button></div><div class="manual-note">${icon('info')}<span>هذا يفتح تطبيقك الرسمي مع نص المسودة لتراجعه بنفسك. لا يحدث إرسال آلي، ولا نعرف إن أُرسلت الرسالة. ${!draft.phone || !draft.email ? `أضف ${!draft.phone && !draft.email ? 'رقم واتساب وبريد الجهة' : !draft.phone ? 'رقم واتساب الجهة' : 'بريد الجهة'} المنشور لتمكين زر القناة المناسبة.` : ''}</span></div></article>`;
+}
+
+function renderDrafts() {
+  return `${header('مسودات العروض والرسائل', 'رسائل أولية مخصصة لكل جهة. راجع النص بنفسك قبل فتح تطبيق التواصل.', `<button class="button button-secondary" data-go="prospects">استكشف الجهات ${icon('arrow')}</button>`)}
+    <div class="callout info" style="margin-bottom:15px">${icon('shield')}<div><strong>المراجعة والإرسال بيدك</strong><p>روابط واتساب والبريد تنقل النص إلى التطبيق الرسمي فقط. لن نرسل الرسالة أو نؤكد سعرًا أو طلبًا أو دفعًا من هنا.</p></div></div>
+    ${state.drafts.length ? `<div class="draft-list">${state.drafts.slice().reverse().map(renderDraftCard).join('')}</div>` : `<section class="empty-state"><span class="empty-icon">${icon('file')}</span><h3>لا توجد مسودات حتى الآن</h3><p>سجّل جهة محتملة مع مصدرها، ثم اضغط «تجهيز مسودة» لكتابة عرض أولي يمكنك مراجعته وتعديله خارج التطبيق.</p><button class="button button-primary" data-go="prospects">الذهاب إلى الجهات ${icon('arrow')}</button></section>`}`;
+}
+
+function renderIntegrations() {
+  return `${header('الربط والإعدادات', 'حالة صريحة للتكاملات المطلوبة وما يلزم إعدادُه رسميًا لاحقًا.')}
+    <div class="callout warning" style="margin-bottom:15px">${icon('shield')}<div><strong>لا تضع كلمات مرور أو رموز تحقق في هذه الواجهة</strong><p>لا يوجد الآن OAuth أو ربط API أو إرسال فعلي. القنوات أدناه غير متصلة، ويجب إعدادها واختبارها في مرحلة تطوير لاحقة باستخدام الطرق الرسمية.</p></div></div>
+    <section class="connection-card"><span class="connection-icon">${icon('mail')}</span><div class="connection-body"><div class="connection-head"><h3>البريد الإلكتروني</h3><span class="connection-status">غير موصول</span></div><p>زر mailto يفتح برنامج البريد على جهازك برسالة جاهزة للمراجعة. لا توجد مصادقة بريد أو إرسال آلي داخل النموذج.</p><ul class="connection-steps"><li>لإرسال آلي مستقبلي: اختيار مزود البريد واعتماد OAuth الرسمي، وتسجيل تطبيق وسياسة خصوصية ونطاق إعادة توجيه مناسب.</li><li>إنشاء خدمة آمنة تحفظ الرموز خارج المتصفح، ثم اختبار التفويض والإرسال المحدود وإظهار سجل موافقات واضح.</li><li>أكمل التهيئة لدى المزود الرسمي؛ لا تشارك كلمة مرور بريدك أو رمز التحقق داخل التطبيق.</li></ul><a class="plain-link" href="https://developers.google.com/gmail/api/auth/web-server" target="_blank" rel="noopener noreferrer">مرجع Google Gmail API الرسمي ${icon('external')}</a></div></section>
+    <section class="connection-card"><span class="connection-icon">${icon('message')}</span><div class="connection-body"><div class="connection-head"><h3>WhatsApp Business Platform</h3><span class="connection-status">غير موصول</span></div><p>زر wa.me يفتح محادثة على جهازك ويملأ نصًا للمراجعة اليدوية. لا يوجد اتصال بحساب WhatsApp Business أو إرسال برمجي.</p><ul class="connection-steps"><li>للتكامل المستقبلي: حساب WhatsApp Business Platform/Cloud API رسمي ورقم أعمال مناسب وإعداد تطبيق Meta.</li><li>إعداد Webhook وقوالب الرسائل وموافقة المستخدمين حيث يلزم، وتخزين بيانات الاعتماد في الخادم بأمان.</li><li>اختبار استقبال وإرسال مضبوطين، ومراجعة سياسات واتساب والقوانين المحلية، مع بوابة موافقة قبل أي إرسال.</li></ul><a class="plain-link" href="https://developers.facebook.com/docs/whatsapp/cloud-api/" target="_blank" rel="noopener noreferrer">مرجع WhatsApp Cloud API الرسمي ${icon('external')}</a></div></section>
+    <section class="connection-card"><span class="connection-icon">${icon('search')}</span><div class="connection-body"><div class="connection-head"><h3>اكتشاف الشركات والمدارس</h3><span class="connection-status">بحث عام يدوي فقط</span></div><p>الموجود حاليًا روابط بحث عامة وإضافة جهة يدويًا مع رابط المصدر. لا يتصل النموذج بمحرك بحث ولا يجمع أو ينسخ بيانات تلقائيًا.</p><ul class="connection-steps"><li>اختيار مزود بيانات/بحث مسموح قانونيًا، والتحقق من شروط الاستخدام والخصوصية في كل دولة مستهدفة.</li><li>تسجيل مصدر كل سجل وتاريخ جمعه، وإتاحة مراجعة/حذف بيانات التواصل واحترام طلبات عدم التواصل.</li></ul></div></section>
+    <div class="setup-strip">${icon('info')}<span>حالة الربط لا تتحول إلى «متصل» إلا بعد إعداد القناة رسميًا واختبارها فعليًا؛ النموذج الحالي لا يطلب منك أسرارًا أو صلاحيات.</span></div>`;
+}
+
+function renderEventRow(event) {
+  return `<div class="event-row"><span class="event-marker"></span><div><strong>${escapeHtml(event.label)}</strong>${event.detail ? `<p>${escapeHtml(event.detail)}</p>` : ''}<time>${formatDate(event.at)}</time></div></div>`;
+}
+
+function renderReports() {
+  const manualContacted = state.prospects.filter((item) => item.status === 'contacted').length;
+  const manualReplies = state.prospects.filter((item) => item.status === 'replied').length;
+  const followUps = state.prospects.filter((item) => item.status === 'followup').length;
+  const prepared = state.metrics.draftsPrepared;
+  const opened = state.metrics.channelsOpened;
+  return `${header('التقارير', 'ملخص محلي لما سجلته داخل مساحة العمل؛ لا يقرأ الردود أو الإرسال من تطبيقاتك.')}
+    <div class="callout info" style="margin-bottom:15px">${icon('info')}<div><strong>الأرقام مصدرها سجلك المحلي فقط</strong><p>«رسالة مرسلة» لا تُحتسب إلا إذا سجلت أنت حالة التواصل يدويًا على الجهة؛ فتح واتساب أو البريد لا يعني أن الإرسال تم.</p></div></div>
+    <div class="report-grid"><div class="report-stat"><span>جهات مسجلة</span><strong>${state.prospects.length}</strong><small>أضيفت يدويًا مع مصدرها</small></div><div class="report-stat"><span>مسودات أُعدت</span><strong>${prepared}</strong><small>محفوظة لمراجعتك</small></div><div class="report-stat"><span>جهات سُجّل لها تواصل يدوي</span><strong>${manualContacted}</strong><small>حسب تحديثك للحالة</small></div><div class="report-stat"><span>رسائل أرسلها النظام</span><strong>0</strong><small>لا يوجد إرسال آلي</small></div></div>
+    <div class="report-columns"><section class="section-card"><div class="section-title"><div><h2>سجل النشاط</h2><p>فتح تطبيقات المراسلة لا يثبت إرسال الرسالة.</p></div><span class="tag">${opened} فتح يدوي</span></div>${state.events.length ? `<div class="event-list">${state.events.slice(0, 15).map(renderEventRow).join('')}</div>` : `<div class="no-results">لا يوجد نشاط مسجل بعد.</div>`}<p class="report-footnote">المسودات المنشأة: ${prepared} · قنوات فُتحت للمراجعة: ${opened} · لا يوجد تتبع للرسائل أو الردود خارج هذا المتصفح.</p></section>
+    <section class="section-card"><div class="section-title"><div><h2>ما يحتاج إلى معلومات أو إجراء</h2><p>بنود واضحة لتجهيز العمل قبل أي تواصل.</p></div></div><div class="status-row"><span class="status-symbol">${icon('layers')}</span><div><strong>ملف النشاط مكتمل ${completionPercent()}%</strong><p>${missingProfile().filter((x) => !x.done).map((x) => escapeHtml(x.label)).join('، ') || 'لا توجد حقول أساسية ناقصة.'}</p></div></div><div class="status-row"><span class="status-symbol">${icon('link')}</span><div><strong>ربط القنوات يحتاج إعدادًا</strong><p>البريد وWhatsApp Business والبحث الآلي غير موصولة، ولا توجد أخطاء إرسال لأنها لم تُجرّب.</p></div></div><div class="status-row"><span class="status-symbol">${icon('clock')}</span><div><strong>${followUps} متابعة مطلوبة · ${manualReplies} رد يدوي مسجل</strong><p>حدّث حالة كل جهة من صفحة الجهات بعد مراجعتك اليدوية.</p></div></div><div class="status-row"><span class="status-symbol">${icon('alert')}</span><div><strong>${state.errors.length} أخطاء محلية مسجلة</strong><p>${state.errors[0] ? `${escapeHtml(state.errors[0].label)} — ${formatDate(state.errors[0].at)}` : 'لا توجد أخطاء محلية مسجلة حتى الآن.'}</p></div></div></section></div>
+    <section class="section-card" style="margin-top:15px"><div class="section-title"><div><h2>نسخة البيانات الاحتياطية</h2><p>احتفظ بملف JSON قبل مسح بيانات المتصفح أو استخدام جهاز آخر.</p></div></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="button button-primary" id="export-report">${icon('download')} تصدير البيانات احتياطيًا</button><button class="button button-secondary" id="import-report">${icon('upload')} استيراد البيانات</button></div><p class="report-footnote">يتضمن الملف بيانات الملف والجهات والمسودات والمحادثة وسجل النشاط؛ سيُنزّل إلى جهازك، ولا يرسل إلى خادم.</p></section>`;
+}
+
+function render() {
+  document.querySelector('#current-page').textContent = currentView === 'chat' ? 'الدردشة العربية' : (viewNames[currentView] || viewNames.dashboard);
+  document.querySelectorAll('.nav-item[data-view], .mobile-nav-item[data-view]').forEach((button) => {
+    button.classList.toggle('active', button.dataset.view === currentView || (currentView === 'chat' && button.dataset.view === 'profile'));
+  });
+  updateNavCounts();
+  const views = {
+    dashboard: renderDashboard,
+    profile: renderProfile,
+    chat: renderChat,
+    prospects: renderProspects,
+    drafts: renderDrafts,
+    integrations: renderIntegrations,
+    reports: renderReports,
+  };
+  content.innerHTML = (views[currentView] || renderDashboard)();
+  if (currentView === 'chat') {
+    const chatWindow = document.querySelector('#chat-window');
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  }
+}
+
+function navigate(view) {
+  if (!viewNames[view] && view !== 'chat') return;
+  currentView = view;
+  searchTerm = '';
+  render();
+  content.focus({ preventScroll: true });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function saveProfile(form) {
+  const values = Object.fromEntries(new FormData(form).entries());
+  state.profile = { ...state.profile, ...values };
+  logEvent('profile', 'حُفظ ملف النشاط', state.profile.businessName || 'تغييرات محفوظة');
+  persist();
+  render();
+  toast('حُفظت تغييرات ملف النشاط على هذا المتصفح.');
+}
+
+function parseChatValue(text) {
+  const mapping = [
+    { patterns: ['اسم الشركة', 'اسم النشاط', 'الشركة'], key: 'businessName', label: 'اسم النشاط' },
+    { patterns: ['وصف المنتج', 'وصف الخدمة', 'المنتج', 'الخدمة'], key: 'productDescription', label: 'وصف المنتج أو الخدمة' },
+    { patterns: ['السعر', 'التسعير', 'آلية السعر'], key: 'pricingNotes', label: 'السعر أو آلية طلب السعر' },
+    { patterns: ['القطاعات', 'القطاع'], key: 'sectors', label: 'القطاعات المستهدفة' },
+    { patterns: ['الدول', 'الدولة', 'البلدان'], key: 'countries', label: 'الدول المستهدفة' },
+    { patterns: ['اللغات', 'اللغة'], key: 'languages', label: 'اللغات' },
+    { patterns: ['البريد', 'الإيميل'], key: 'customerEmail', label: 'البريد الإلكتروني' },
+    { patterns: ['واتساب', 'الهاتف'], key: 'customerPhone', label: 'رقم التواصل' },
+    { patterns: ['معلومات الشركة', 'نبذة'], key: 'companyDetails', label: 'معلومات الشركة' },
+  ];
+  const match = text.match(/^\s*([^:：]{2,40})\s*[:：]\s*(.+)$/s);
+  if (!match) return null;
+  const prefix = match[1].trim().toLowerCase();
+  const value = match[2].trim();
+  const field = mapping.find((item) => item.patterns.some((pattern) => prefix.includes(pattern)));
+  return field && value ? { ...field, value } : null;
+}
+
+function onChatSubmit(form) {
+  const values = new FormData(form);
+  const text = String(values.get('message') || '').trim();
+  if (!text) return;
+  state.chat.push({ id: makeId(), role: 'user', text, at: new Date().toISOString() });
+  const parsed = parseChatValue(text);
+  let response;
+  if (parsed) {
+    state.profile[parsed.key] = parsed.value;
+    response = `تمت إضافة «${parsed.label}» إلى ملف النشاط محليًا. بقي ${missingProfile().filter((item) => !item.done).length} من الحقول الأساسية غير مكتمل. ما المعلومة التالية؟`;
+  } else {
+    state.profile.extraDetails = [state.profile.extraDetails, text].filter(Boolean).join('\n');
+    response = 'احتفظت بملاحظتك في «معلومات إضافية» بملف النشاط. إن أردت تحديث حقل محدد، أرسلها بصيغة «السعر: ...» أو «الدول: ...». ' + (missingProfile().filter((item) => !item.done).length ? `لا يزال ينقص: ${missingProfile().filter((item) => !item.done).map((item) => item.label).slice(0, 3).join('، ')}.` : 'الحقول الأساسية مكتملة، ويمكنك مراجعة المسودة في صفحة الجهات.');
+  }
+  state.chat.push({ id: makeId(), role: 'agent', text: response, at: new Date().toISOString() });
+  logEvent('chat', 'محادثة إرشادية محلية', parsed ? `تحديث ${parsed.label}` : 'حُفظت ملاحظة إضافية');
+  persist();
+  render();
+}
+
+function addProspect(form) {
+  const values = Object.fromEntries(new FormData(form).entries());
+  const source = safeHttpUrl(values.source || '');
+  if (!source) {
+    toast('أدخل رابط مصدر صحيحًا يبدأ بـ https:// أو http://.', 'error');
+    return;
+  }
+  if (values.publicData !== 'on') {
+    toast('أكد أن بيانات التواصل منشورة علنًا قبل الحفظ.', 'error');
+    return;
+  }
+  const prospect = {
+    id: makeId(), name: String(values.name || '').trim(), sector: String(values.sector || '').trim(),
+    country: String(values.country || '').trim(), email: String(values.email || '').trim(), phone: String(values.phone || '').trim(),
+    source, notes: String(values.notes || '').trim(), language: values.language === 'en' ? 'en' : 'ar', publicData: true, status: 'new', createdAt: new Date().toISOString(),
+  };
+  if (!prospect.name) {
+    toast('أدخل اسم الجهة.', 'error');
+    return;
+  }
+  state.prospects.push(prospect);
+  logEvent('prospect', 'أُضيفت جهة محتملة يدويًا', `${prospect.name} · مصدر منشور مرفق`);
+  persist();
+  document.querySelector('#lead-dialog').close();
+  form.reset();
+  toast('تم حفظ الجهة ومصدرها في هذا المتصفح.');
+  render();
+}
+
+function getProspect(id) {
+  return state.prospects.find((prospect) => prospect.id === id);
+}
+
+function createDraft(id) {
+  const prospect = getProspect(id);
+  if (!prospect) return;
+  const p = state.profile;
+  const company = p.businessName || 'فريقنا';
+  const product = p.productName || 'غرف ثلاثية الأبعاد تفاعلية';
+  const sectorText = prospect.sector ? ` لجهات في قطاع ${prospect.sector}` : '';
+  const isEnglish = prospect.language === 'en';
+  const body = isEnglish
+    ? `Hello ${prospect.name},\n\nI'm reaching out from ${company}. We offer ready-to-use interactive 3D rooms for classrooms, offices, shops, and more, with avatars, boards, and interactive buttons.\n\nWe would be glad to learn about your needs and prepare a proposal for your review. You can explore our offer and request page: ${p.offerUrl}\n\nKind regards,\n${company}\n${p.customerPhone}\n${p.customerEmail}`
+    : `السلام عليكم${prospect.name ? ` ${prospect.name}` : ''}،\n\nأنا أتواصل معكم من ${company}. نقدم ${product}: ${p.productDescription}\n\nنود معرفة احتياجكم، ثم إعداد عرض مناسب للمراجعة بعد فهم المتطلبات. يمكنكم الاطلاع على موقع العرض والطلب: ${p.offerUrl}\n\nيسعدنا التواصل معكم${sectorText}.\n\nمع التحية،\n${company}\n${p.customerPhone}\n${p.customerEmail}`;
+  const draft = {
+    id: makeId(), prospectId: prospect.id, orgName: prospect.name, sector: prospect.sector, country: prospect.country,
+    email: prospect.email, phone: prospect.phone, language: prospect.language || 'ar', subject: isEnglish ? `A proposal for an interactive 3D room for ${prospect.name}` : `اقتراح تجربة ${product} لجهتكم`, body,
+    status: 'review', createdAt: new Date().toISOString(), createdDate: formatDate(new Date().toISOString(), false),
+  };
+  state.drafts.push(draft);
+  state.metrics.draftsPrepared += 1;
+  logEvent('draft', 'أُعدت مسودة للمراجعة', prospect.name);
+  persist();
+  currentView = 'drafts';
+  render();
+  toast('أُعدت المسودة؛ راجع النص قبل فتح تطبيق التواصل.');
+}
+
+function normalizePhoneForWa(phone) {
+  const trimmed = String(phone || '').trim();
+  let digits = trimmed.replace(/\D/g, '');
+  if (digits.startsWith('00')) digits = digits.slice(2);
+  if (!digits || trimmed.startsWith('0') && !trimmed.startsWith('00')) return '';
+  return digits.length >= 8 && digits.length <= 15 ? digits : '';
+}
+
+function openExternal(url, label) {
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.target = '_blank';
+  anchor.rel = 'noopener noreferrer';
+  anchor.setAttribute('aria-label', label);
+  document.body.append(anchor);
+  anchor.click();
+  anchor.remove();
+}
+
+function openWhatsApp(id) {
+  const draft = state.drafts.find((item) => item.id === id);
+  if (!draft) return;
+  const number = normalizePhoneForWa(draft.phone);
+  if (!number) {
+    toast('أدخل رقم الجهة المنشور بالصيغة الدولية مع مفتاح الدولة قبل فتح واتساب.', 'error');
+    return;
+  }
+  const url = `https://wa.me/${number}?text=${encodeURIComponent(draft.body)}`;
+  openExternal(url, 'فتح واتساب لمراجعة المسودة يدويًا');
+  state.metrics.channelsOpened += 1;
+  logEvent('channel-open', 'فُتح رابط واتساب للمراجعة اليدوية', draft.orgName);
+  persist();
+  toast('فتحنا رابط واتساب بنص المسودة. راجعها وأرسلها يدويًا إن رغبت؛ لم يتم إرسال شيء آليًا.');
+}
+
+function openEmail(id) {
+  const draft = state.drafts.find((item) => item.id === id);
+  if (!draft) return;
+  if (!draft.email) {
+    toast('أضف بريد الجهة المنشور أولًا.', 'error');
+    return;
+  }
+  const url = `mailto:${encodeURIComponent(draft.email)}?subject=${encodeURIComponent(draft.subject)}&body=${encodeURIComponent(draft.body)}`;
+  openExternal(url, 'فتح البريد الإلكتروني لمراجعة المسودة يدويًا');
+  state.metrics.channelsOpened += 1;
+  logEvent('channel-open', 'فُتح mailto للمراجعة اليدوية', draft.orgName);
+  persist();
+  toast('فتحنا مسودة البريد على جهازك. راجعها وأرسلها بنفسك؛ لم يتم إرسال شيء آليًا.');
+}
+
+function exportBackup() {
+  try {
+    const backup = {
+      app: APP_ID,
+      schemaVersion: 1,
+      exportedAt: new Date().toISOString(),
+      data: state,
+    };
+    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json;charset=utf-8' });
+    const href = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = href;
+    anchor.download = `masaha-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.append(anchor);
+    anchor.click();
+    anchor.remove();
+    URL.revokeObjectURL(href);
+    logEvent('export', 'تم تنزيل نسخة JSON احتياطية', 'حُفظ الملف على جهازك');
+    persist();
+    if (currentView === 'reports') render();
+    toast('تم تنزيل النسخة الاحتياطية JSON على جهازك.');
+  } catch (error) {
+    logError('فشل تصدير البيانات', error?.message || 'تعذّر إنشاء ملف النسخة الاحتياطية');
+    toast('تعذّر إنشاء ملف النسخة الاحتياطية.', 'error');
+  }
+}
+
+function validateBackup(payload) {
+  if (!payload || typeof payload !== 'object' || payload.app !== APP_ID || payload.schemaVersion !== 1) return null;
+  const data = payload.data;
+  if (!data || data.schemaVersion !== 1 || !data.profile || typeof data.profile !== 'object') return null;
+  if (!Array.isArray(data.prospects) || !Array.isArray(data.drafts) || !Array.isArray(data.chat) || !Array.isArray(data.events)) return null;
+  const prospectsOk = data.prospects.every((item) => item && typeof item.name === 'string' && typeof item.source === 'string');
+  const draftsOk = data.drafts.every((item) => item && typeof item.body === 'string' && typeof item.subject === 'string');
+  if (!prospectsOk || !draftsOk) return null;
+  return {
+    ...newDefaultState(),
+    ...data,
+    profile: { ...defaultProfile, ...data.profile },
+    prospects: data.prospects.slice(0, 500),
+    drafts: data.drafts.slice(0, 1000),
+    chat: data.chat.slice(-300),
+    events: data.events.slice(0, 100),
+    metrics: {
+      draftsPrepared: Number.isSafeInteger(data.metrics?.draftsPrepared) && data.metrics.draftsPrepared >= 0 ? data.metrics.draftsPrepared : data.drafts.length,
+      channelsOpened: Number.isSafeInteger(data.metrics?.channelsOpened) && data.metrics.channelsOpened >= 0 ? data.metrics.channelsOpened : data.events.filter((item) => item?.type === 'channel-open').length,
+    },
+    errors: Array.isArray(data.errors) ? data.errors.slice(0, 30) : [],
+  };
+}
+
+async function readImportFile(file) {
+  try {
+    if (!file || file.size > 5 * 1024 * 1024) throw new Error('حجم الملف يتجاوز 5 ميغابايت.');
+    const payload = JSON.parse(await file.text());
+    const candidate = validateBackup(payload);
+    if (!candidate) throw new Error('الملف ليس نسخة احتياطية صالحة من مساحة العمل أو أن بنيته غير مدعومة.');
+    importCandidate = candidate;
+    document.querySelector('#import-file-meta').textContent = `${file.name} · ${(file.size / 1024).toFixed(1)} كيلوبايت · ${candidate.prospects.length} جهة · ${candidate.drafts.length} مسودة`;
+    document.querySelector('#import-dialog').showModal();
+  } catch (error) {
+    logError('فشل استيراد البيانات', error?.message || 'ملف JSON غير صالح');
+    toast(error?.message || 'تعذّر قراءة ملف JSON.', 'error');
+  }
+}
+
+function confirmImport() {
+  if (!importCandidate) return;
+  state = importCandidate;
+  importCandidate = null;
+  document.querySelector('#import-dialog').close();
+  logEvent('import', 'تم استيراد نسخة JSON', 'استُبدلت بيانات مساحة العمل بعد تأكيد المستخدم');
+  persist();
+  render();
+  toast('اكتمل الاستيراد واستُعيدت البيانات على هذا المتصفح.');
+  document.querySelector('#import-file').value = '';
+}
+
+function updateProspectStatus(id, status) {
+  const prospect = getProspect(id);
+  if (!prospect) return;
+  prospect.status = status;
+  const labels = { new: 'جديدة', followup: 'متابعة مطلوبة', replied: 'رد مسجل يدويًا', contacted: 'تواصل يدوي مسجل' };
+  logEvent('status', 'تم تحديث حالة جهة يدويًا', `${prospect.name} · ${labels[status] || status}`);
+  persist();
+  toast('تم تحديث الحالة يدويًا؛ لا يوجد تتبع تلقائي للرسائل أو الردود.');
+  render();
+}
+
+function openLeadDialog() {
+  document.querySelector('#lead-dialog').showModal();
+}
+
+document.addEventListener('click', (event) => {
+  const viewButton = event.target.closest('[data-view]');
+  if (viewButton) {
+    event.preventDefault();
+    navigate(viewButton.dataset.view);
+    return;
+  }
+  const goButton = event.target.closest('[data-go]');
+  if (goButton) {
+    navigate(goButton.dataset.go);
+    return;
+  }
+  const action = event.target.closest('[data-action]');
+  if (action) {
+    const { action: name, id } = action.dataset;
+    if (name === 'add-prospect') openLeadDialog();
+    if (name === 'create-draft') createDraft(id);
+    if (name === 'open-whatsapp') openWhatsApp(id);
+    if (name === 'open-email') openEmail(id);
+    return;
+  }
+  if (event.target.closest('#export-report')) exportBackup();
+  if (event.target.closest('#import-report')) document.querySelector('#import-file').click();
+  if (event.target.closest('#export-top')) exportBackup();
+  if (event.target.closest('#import-top')) document.querySelector('#import-file').click();
+  if (event.target.closest('.close-dialog')) {
+    const dialog = event.target.closest('dialog');
+    if (dialog?.open) dialog.close();
+  }
+});
+
+document.addEventListener('submit', (event) => {
+  if (event.target.id === 'profile-form') {
+    event.preventDefault();
+    saveProfile(event.target);
+  }
+  if (event.target.id === 'chat-form') {
+    event.preventDefault();
+    onChatSubmit(event.target);
+  }
+  if (event.target.id === 'lead-form') {
+    event.preventDefault();
+    addProspect(event.target);
+  }
+});
+
+document.addEventListener('input', (event) => {
+  if (event.target.id === 'prospect-filter') {
+    searchTerm = event.target.value;
+    const start = event.target.selectionStart;
+    const end = event.target.selectionEnd;
+    render();
+    const input = document.querySelector('#prospect-filter');
+    input?.focus();
+    if (input && start !== null && end !== null) input.setSelectionRange(start, end);
+  }
+});
+
+document.addEventListener('change', (event) => {
+  if (event.target.matches('[data-prospect-status]')) updateProspectStatus(event.target.dataset.prospectStatus, event.target.value);
+  if (event.target.id === 'import-file') readImportFile(event.target.files?.[0]);
+});
+
+document.querySelector('#confirm-import').addEventListener('click', confirmImport);
+document.querySelector('#import-dialog').addEventListener('close', () => {
+  if (!importCandidate) document.querySelector('#import-file').value = '';
+});
+
+render();
+
+</script>
+  </body>
+</html>
