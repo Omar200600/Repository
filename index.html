@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#f5f7f4" />
-    <meta name="description" content="ثري دي اكسيس | وكيل المبيعات الذكي المدعوم بالذكاء الاصطناعي المجاني لتسويق الغرف ثلاثية الأبعاد التفاعلية." />
+    <meta name="description" content="ثري دي اكسيس | وكيل المبيعات الذكي المدعوم بالذكاء الاصطناعي لتسويق الغرف ثلاثية الأبعاد التفاعلية." />
     <title>ثري دي اكسيس | وكيل المبيعات الذكي</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2212%22%20fill%3D%22%23e8f4ed%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2316845d%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222.5%22%3E%3Cpath%20d%3D%22M5.5%2012.5%2014.5%207l9%205.5v10l-9%205.5-9-5.5z%22%2F%3E%3Cpath%20d%3D%22m16.5%2012.5%209-5.5%209%205.5v10l-9%205.5-9-5.5z%22%2F%3E%3Cpath%20d%3D%22M12.5%2026.5%2021.5%2021l9%205.5v7l-9%205.5-9-5.5z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A" />
     <style>
@@ -153,7 +153,7 @@ const defaultProfile = {
   companyDetails: 'تطوير الأستاذ عمر حسان عبره — Founder & CEO of 3D Axis. بيئات افتراضية خفيفة وسريعة تعمل مباشرة على المتصفح والهواتف.',
   customerPhone: '+967 737 219 181',
   customerEmail: 'omarebrah2060@gmail.com',
-  offerUrl: 'https://wkaltyomar.vercel.app/#order',
+  offerUrl: 'https://omar200600.github.io/wkalteaxes/',
   extraDetails: '',
 };
 
@@ -166,7 +166,7 @@ function newDefaultState() {
     chat: [{
       id: makeId(),
       role: 'agent',
-      text: 'أهلاً بك يا أستاذ عمر! أنا مستشار المبيعات الذكي لـ «ثري دي اكسيس».\n\nالآن أصبحت أستطيع البحث واستخراج قوائم المدارس الأهلية والشركات وأرقامها وإيميلاتها وروابطها، واختبار صلاحية الأرقام والإيميلات، وتوليد رسائل مخصصة لكل جهة بضغطة زر من قسم «البحث والجهات AI».\n\nكيف أساعدك الآن؟',
+      text: 'أهلاً بك يا أستاذ عمر! أنا مستشار المبيعات الذكي لـ «ثري دي اكسيس».\n\nتم ربط وكالة المعرض الرقمي الرسمية (https://omar200600.github.io/wkalteaxes/) بنجاح في جميع رسائل ومسودات العروض ليتوجه الزبائن للشراء أو الإيجار مباشرة.\n\nكيف أساعدك اليوم؟',
       at: new Date().toISOString()
     }],
     events: [],
@@ -192,6 +192,10 @@ function loadState() {
         mergedProfile[k] = parsed.profile[k];
       }
     });
+    // ضمان تحديث رابط الوكالة الجديد تلقائياً لو كان قديماً
+    if (!mergedProfile.offerUrl || mergedProfile.offerUrl.includes('wkaltyomar.vercel.app')) {
+      mergedProfile.offerUrl = 'https://omar200600.github.io/wkalteaxes/';
+    }
     return {
       ...newDefaultState(),
       ...parsed,
@@ -281,7 +285,7 @@ function buildCompanyContext() {
 الدول المستهدفة: ${p.countries}
 واتساب العملاء: ${p.customerPhone}
 البريد الإلكتروني: ${p.customerEmail}
-رابط العرض والطلب المباشر: ${p.offerUrl}
+رابط المعرض والوكالة الرسمي للشراء: ${p.offerUrl}
 معلومات إضافية: ${p.companyDetails} ${p.extraDetails}`.trim();
 }
 
@@ -396,12 +400,12 @@ function renderDashboard() {
   return `
     <section class="hero-panel">
       <div class="hero-copy">
-        <span class="eyebrow">البحث والاستخراج الآلي بالذكاء الاصطناعي</span>
+        <span class="eyebrow">رابط المعرض والوكالة الرسمي مرتبط بنجاح</span>
         <h1>حوّل الغرفة إلى تجربة<br>تُعرَف وتُعاش.</h1>
-        <p>ابحث آليًا عن المدارس الأهلية والشركات، استخرج أرقامها وإيميلاتها، اختبر صحتها، وولّد رسائل مخصصة لكل جهة بضغطة زر.</p>
+        <p>ابحث آليًا عن المدارس والشركات، واستخرج بياناتها، وارسل لها رسائل مخصصة تتضمن رابط وكالتك الرسمية (omar200600.github.io/wkalteaxes) لطلب الشراء.</p>
         <div class="hero-cta">
           <button class="button button-light" data-go="prospects">${icon('search')} ابدأ البحث الآلي عن الجهات (AI)</button>
-          <button class="button button-glass" data-go="chat">${icon('sparkles')} مستشار المبيعات</button>
+          <a class="button button-glass" href="${escapeHtml(p.offerUrl)}" target="_blank" rel="noopener noreferrer">${icon('external')} زيارة معرض الوكالة المباشر</a>
         </div>
       </div>
       <div class="hero-object" aria-hidden="true"><span class="room-box one"></span><span class="room-box two"></span><span class="room-box three"></span></div>
@@ -409,25 +413,25 @@ function renderDashboard() {
 
     <div class="stats-grid">
       ${statCard('جهات مستخرجة', state.prospects.length, 'مفحوصة ومخزنة بالنظام', 'school')}
-      ${statCard('مسودات ذكية', state.drafts.length, 'مكتوبة باسم كل جهة', 'file')}
+      ${statCard('مسودات ذكية', state.drafts.length, 'تحتوي رابط الوكالة للشراء', 'file')}
       ${statCard('قنوات فُتحت', state.metrics.channelsOpened, 'مراجعة يدوية عبر واتساب/بريد', 'send')}
       ${statCard('اكتمال ملف النشاط', `${completionPercent()}%`, 'معلومات محفوظة محليًا', 'layers')}
     </div>
 
     <div class="dashboard-columns">
       <section class="panel">
-        <div class="panel-heading"><div><h2>خطوتك التالية</h2><p>دع الوكيل يبحث ويجهز لك القائمة والرسائل آليًا.</p></div>${icon('arrow')}</div>
+        <div class="panel-heading"><div><h2>خطوتك التالية</h2><p>دع الوكيل يربط الزبائن بمعرضك الرقمي فوراً.</p></div>${icon('arrow')}</div>
         <div class="quick-list">
-          <button class="quick-item" data-go="prospects"><span class="quick-icon">${icon('search')}</span><span><strong>البحث والاستخراج الآلي عن المدارس والشركات (AI)</strong><small>اكتب القطاع والدولة وسيستخرج الوكيل الأسماء والعناوين والأرقام ويختبرها.</small></span><span class="quick-arrow">←</span></button>
+          <button class="quick-item" data-go="prospects"><span class="quick-icon">${icon('search')}</span><span><strong>البحث والاستخراج الآلي عن المدارس والشركات (AI)</strong><small>اكتب القطاع والدولة وسيستخرج الوكيل الجهات ويجهز عروضها بالرابط الرسمي.</small></span><span class="quick-arrow">←</span></button>
           <button class="quick-item" data-go="drafts"><span class="quick-icon">${icon('file')}</span><span><strong>مراجعة وإرسال مسودات العروض الذكية</strong><small>افتح الرسائل المولدة مباشرة في واتساب أو البريد الإلكتروني.</small></span><span class="quick-arrow">←</span></button>
           <button class="quick-item" data-go="chat"><span class="quick-icon">${icon('sparkles')}</span><span><strong>تحدث مع مستشار المبيعات الذكي (AI)</strong><small>اطلب خطة تسويق، ردود إقناع، أو صياغة عروض مخصصة مجانًا.</small></span><span class="quick-arrow">←</span></button>
         </div>
       </section>
       <section class="panel">
-        <div class="panel-heading"><div><h2>حالة المحركات والربط</h2><p>الذكاء الاصطناعي يعمل مباشرة بدون مفاتيح.</p></div><span class="tag ai-online">AI متصل مجانًا</span></div>
-        <div class="status-row"><span class="status-symbol">${icon('sparkles')}</span><div><strong>محرك البحث والتوليد (Pollinations AI)</strong><p>يستخرج قوائم المدارس والشركات ويصوغ عروضًا مخصصة لكل جهة مجانًا.</p></div></div>
-        <div class="status-row"><span class="status-symbol">${icon('shield')}</span><div><strong>فاحص الأرقام والإيميلات التلقائي</strong><p>يختبر صيغة كل رقم واتساب وبريد إلكتروني ويميّز الصالح منها تلقائيًا.</p></div></div>
-        <div class="status-row"><span class="status-symbol amber">${icon('message')}</span><div><strong>واتساب والبريد المباشر</strong><p>تُفتح مسودتك جاهزة باسم الجهة للمراجعة اليدوية قبل الإرسال.</p></div></div>
+        <div class="panel-heading"><div><h2>حالة المحركات والربط</h2><p>رابط الوكالة مُدمج في جميع الرسائل.</p></div><span class="tag ai-online">الوكالة مرتبطة</span></div>
+        <div class="status-row"><span class="status-symbol">${icon('globe')}</span><div><strong>رابط الوكالة الرسمي</strong><p><a href="${escapeHtml(p.offerUrl)}" target="_blank" rel="noopener noreferrer" class="plain-link">omar200600.github.io/wkalteaxes/ ${icon('external')}</a></p></div></div>
+        <div class="status-row"><span class="status-symbol">${icon('sparkles')}</span><div><strong>محرك التوليد والبحث</strong><p>مربوط بـ Pollinations AI ومغذى برابط المعرض لضمان توجيه العملاء للشراء.</p></div></div>
+        <div class="status-row"><span class="status-symbol amber">${icon('message')}</span><div><strong>واتساب والبريد</strong><p>تُفتح مسودتك جاهزة للعميل للمراجعة اليدوية والإرسال.</p></div></div>
       </section>
     </div>
     <section class="panel" style="margin-top:16px">
@@ -446,12 +450,13 @@ function renderProfile() {
     <div class="page-grid">
       <form id="profile-form">
         <section class="section-card">
-          <div class="section-title"><div><h2>معلومات العرض</h2><p>كلما كان الوصف أوضح، كتب الذكاء الاصطناعي عروضًا أقوى.</p></div></div>
+          <div class="section-title"><div><h2>معلومات العرض والمعرض</h2><p>رابط الوكالة أدناه يوضع في كل رسالة ليتوجه الزبائن للشراء.</p></div></div>
           <div class="field-grid">
             <label class="field"><span>اسم الشركة أو النشاط التجاري</span><input name="businessName" maxlength="120" value="${escapeHtml(p.businessName)}" placeholder="ثري دي اكسيس (3D Axis)" /></label>
             <label class="field"><span>اسم المنتج أو الخدمة</span><input name="productName" maxlength="120" value="${escapeHtml(p.productName || 'غرف ثلاثية الأبعاد تفاعلية')}" placeholder="اسم مختصر للخدمة" /></label>
             <label class="field field-full"><span>وصف المنتجات والخدمات <b>*</b></span><textarea name="productDescription" rows="4" maxlength="1200" placeholder="ما الذي تبيعه أو تؤجره؟ ما المزايا؟">${escapeHtml(p.productDescription)}</textarea></label>
-            <label class="field field-full"><span>السعر أو آلية طلب السعر <b>*</b></span><textarea name="pricingNotes" rows="2" maxlength="500" placeholder="مثال: السعر حسب مساحة الغرفة، ويُرسل عرض السعر بعد معرفة المتطلبات.">${escapeHtml(p.pricingNotes)}</textarea><small class="field-hint">يستخدم الذكاء الاصطناعي هذا الوصف لشرح مرونة الأسعار دون إلزامك برقم ثابت.</small></label>
+            <label class="field field-full"><span>السعر أو آلية طلب السعر <b>*</b></span><textarea name="pricingNotes" rows="2" maxlength="500" placeholder="مثال: السعر حسب مساحة الغرفة...">${escapeHtml(p.pricingNotes)}</textarea></label>
+            <label class="field field-full"><span>رابط الوكالة والمعرض الرقمي الرسمي (للشراء والمعاينة) <b>*</b></span><input name="offerUrl" type="url" dir="ltr" value="${escapeHtml(p.offerUrl)}" placeholder="https://omar200600.github.io/wkalteaxes/" required /></label>
           </div>
         </section>
         <section class="section-card">
@@ -465,17 +470,16 @@ function renderProfile() {
         <section class="section-card">
           <div class="section-title"><div><h2>معلومات الشركة والتواصل</h2><p>بيانات التواصل أدناه يدمجها الذكاء الاصطناعي في توقيع الرسائل.</p></div></div>
           <div class="field-grid">
-            <label class="field field-full"><span>معلومات إضافية عن الشركة</span><textarea name="companyDetails" rows="3" maxlength="800" placeholder="نبذة، خبرات، أسلوب تنفيذ، مدة تجهيز...">${escapeHtml(p.companyDetails)}</textarea></label>
+            <label class="field field-full"><span>معلومات إضافية عن الشركة</span><textarea name="companyDetails" rows="3" maxlength="800" placeholder="نبذة، خبرات، أسلوب تنفيذ...">${escapeHtml(p.companyDetails)}</textarea></label>
             <label class="field"><span>واتساب العملاء</span><input name="customerPhone" type="tel" dir="ltr" value="${escapeHtml(p.customerPhone)}" placeholder="+967 ..." /></label>
             <label class="field"><span>البريد الإلكتروني للعملاء</span><input name="customerEmail" type="email" dir="ltr" value="${escapeHtml(p.customerEmail)}" placeholder="you@example.com" /></label>
-            <label class="field field-full"><span>موقع العرض والطلب</span><input name="offerUrl" type="url" dir="ltr" value="${escapeHtml(p.offerUrl)}" placeholder="https://..." /></label>
           </div>
           <div class="form-actions"><span class="save-state">الحفظ تلقائي على هذا الجهاز</span><button class="button button-primary" type="submit">حفظ التغييرات</button></div>
         </section>
       </form>
       <aside>
         <section class="completion-card"><div class="completion-head"><h3>اكتمال الملف</h3><span class="completion-number">${done} من ${checks.length}</span></div><div class="progress-track"><div class="progress-bar" style="width:${completionPercent()}%"></div></div><p>يعتمد محرك الذكاء الاصطناعي على هذه البيانات لتخصيص كل عرض.</p><div class="missing-list">${checks.map((item) => `<div class="missing-item ${item.done ? 'complete-item' : ''}">${escapeHtml(item.label)} ${item.done ? '✓' : ''}</div>`).join('')}</div></section>
-        <section class="section-card" style="margin-top:14px"><span class="eyebrow">مستشار الذكاء الاصطناعي</span><h2>تحدث معه مباشرة</h2><p class="muted" style="font-size:10px;line-height:1.8">اسأله عن أي استراتيجية بيع أو اكتب «السعر: ...» لتحديث بياناتك فورًا.</p><button class="button button-primary" style="width:100%;margin-top:9px" data-go="chat">${icon('sparkles')} افتح مستشار المبيعات AI</button></section>
+        <section class="section-card" style="margin-top:14px"><span class="eyebrow">مستشار الذكاء الاصطناعي</span><h2>تحدث معه مباشرة</h2><p class="muted" style="font-size:10px;line-height:1.8">اسأله عن أي استراتيجية بيع لتسويق روابط الغرف.</p><button class="button button-primary" style="width:100%;margin-top:9px" data-go="chat">${icon('sparkles')} افتح مستشار المبيعات AI</button></section>
       </aside>
     </div>`;
 }
@@ -485,7 +489,7 @@ function renderChat() {
     <div class="page-grid">
       <section class="section-card">
         <div class="panel-heading">
-          <div><h2>محادثتك مع وكيل ثري دي اكسيس</h2><p>مدعوم بالذكاء الاصطناعي المجاني · يفهم السياق ويصوغ الأفكار والعروض.</p></div>
+          <div><h2>محادثتك مع وكيل ثري دي اكسيس</h2><p>مدعوم بالذكاء الاصطناعي المجاني · يدمج رابط وكالتك في كل اقتراح.</p></div>
           <span class="tag ai-online">Pollinations AI متصل</span>
         </div>
         <div class="chat-window" id="chat-window">
@@ -493,10 +497,10 @@ function renderChat() {
           ${isAiThinking ? `<div class="chat-msg agent"><div class="ai-pulse"><span></span> جاري التفكير وصياغة الرد الذكي...</div></div>` : ''}
         </div>
         <div class="quick-chips">
-          <button type="button" class="chip-btn" data-prompt="اكتب لي رسالة واتساب قصيرة ومقنعة لمدير مدرسة أهلية في السعودية لعرض فصول ثري دي اكسيس الافتراضية.">رسالة لمدرسة أهلية</button>
-          <button type="button" class="chip-btn" data-prompt="كيف أقنع مدير شركة عقارية أو معرض تجاري باستئجار مقر ثلاثي الأبعاد في ثري دي اكسيس؟">إقناع شركة تجارية</button>
-          <button type="button" class="chip-btn" data-prompt="إذا قال العميل: السعر مرتفع أو لا نحتاج تقنية 3D حاليًا، كيف أرد عليه بذكاء؟">الرد على اعتراض السعر</button>
-          <button type="button" class="chip-btn" data-prompt="اقترح لي خطة عمل أسبوعية لجلب أول 10 عملاء لـ ثري دي اكسيس في الخليج.">خطة جلب 10 عملاء</button>
+          <button type="button" class="chip-btn" data-prompt="اكتب لي رسالة واتساب قصيرة ومقنعة لمدير مدرسة أهلية في السعودية لعرض فصول ثري دي اكسيس مع إدراج رابط المعرض الشامل.">رسالة لمدرسة أهلية</button>
+          <button type="button" class="chip-btn" data-prompt="كيف أدعو وزراء ومسؤولي التعليم لزيارة معرضنا الافتراضي على الرابط الجديد؟">دعوة لمسؤولي التعليم</button>
+          <button type="button" class="chip-btn" data-prompt="إذا سألنا العميل عن كيفية معاينة الغرف، كيف أشرح له طريقة زيارة المعرض الرقمي؟">شرح طريقة المعاينة</button>
+          <button type="button" class="chip-btn" data-prompt="اقترح لي خطة عمل أسبوعية لجلب أول 10 عملاء عبر رابط الوكالة الجديد.">خطة جلب عملاء للمعرض</button>
         </div>
         <form class="chat-compose" id="chat-form">
           <input name="message" maxlength="1000" autocomplete="off" placeholder="اسأل مستشار المبيعات أو اطلب صياغة عرض..." aria-label="اكتب رسالة للوكيل" required ${isAiThinking ? 'disabled' : ''} />
@@ -559,7 +563,7 @@ function renderProspects() {
   const matches = state.prospects.filter((prospect) => `${prospect.name} ${prospect.sector} ${prospect.country} ${prospect.address || ''} ${prospect.email} ${prospect.phone}`.toLowerCase().includes(searchTerm.toLowerCase()));
   const withoutDraftsCount = state.prospects.filter((p) => !state.drafts.some((d) => d.prospectId === p.id)).length;
 
-  return `${header('البحث الآلي واستخراج الجهات (AI)', 'اختر الفئة أو اكتب ما تريد البحث عنه، وسيستخرج الوكيل الأسماء والعناوين والأرقام ويختبرها وينشئ رسائلها.', `<button class="button button-secondary" data-action="add-prospect">${icon('plus')} إضافة يدوية</button>`)}
+  return `${header('البحث الآلي واستخراج الجهات (AI)', 'اختر الفئة أو اكتب ما تريد البحث عنه، وسيستخرج الوكيل الأسماء والعناوين والأرقام ويختبرها وينشئ رسائلها المتضمنة رابط وكالتك.', `<button class="button button-secondary" data-action="add-prospect">${icon('plus')} إضافة يدوية</button>`)}
 
     <section class="ai-finder-box">
       <div class="panel-heading" style="margin-bottom:6px">
@@ -567,21 +571,20 @@ function renderProspects() {
           <span class="eyebrow">محرك الاستكشاف والاستخراج التلقائي</span>
           <h2 style="font-family:'Tajawal';font-size:17px;margin:0">ابحث واستخرج قائمة جهات كاملة بضغطة زر</h2>
         </div>
-        <span class="tag ai-online">استخراج + فحص أرقام + رسائل</span>
+        <span class="tag ai-online">استخراج + فحص أرقام + رسائل بالرابط</span>
       </div>
-      <p class="muted" style="font-size:11px;margin:0 0 10px">اختر تصنيفًا جاهزًا أو اكتب أي مجال ومدينة (مثال: مدارس أهلية في الرياض، شركات عقارية في دبي، مراكز تدريب في جدة):</p>
+      <p class="muted" style="font-size:11px;margin:0 0 10px">اختر تصنيفًا جاهزًا أو اكتب أي مجال ومدينة (مثال: مدارس أهلية في الرياض، جهات تعليمية، شركات عقارية):</p>
 
       <div class="quick-chips" style="margin-bottom:10px">
         <button type="button" class="chip-btn" data-finder-preset="مدارس أهلية وعالمية" data-finder-country="السعودية">🏫 مدارس أهلية في السعودية</button>
+        <button type="button" class="chip-btn" data-finder-preset="جهات تربوية وإدارات تعليم" data-finder-country="الخليج">🏛️ جهات تربوية وتعليمية</button>
         <button type="button" class="chip-btn" data-finder-preset="مدارس خاصة وأكاديميات" data-finder-country="الإمارات">🏫 مدارس خاصة في الإمارات</button>
         <button type="button" class="chip-btn" data-finder-preset="شركات عقارية وتطوير عمراني" data-finder-country="السعودية">🏢 شركات عقارية</button>
         <button type="button" class="chip-btn" data-finder-preset="معاهد ومراكز تدريب مهني" data-finder-country="الخليج">🎓 مراكز تدريب مهني</button>
-        <button type="button" class="chip-btn" data-finder-preset="شركات تسويق وتنظيم معارض" data-finder-country="قطر">📢 شركات تسويق ومعارض</button>
-        <button type="button" class="chip-btn" data-finder-preset="جامعات وكليات أهلية" data-finder-country="اليمن">🏛️ جامعات وكليات</button>
       </div>
 
       <form id="ai-finder-form" class="ai-finder-row">
-        <input id="finder-query" name="query" value="${escapeHtml(lastFinderQuery)}" placeholder="اكتب ما تبحث عنه (مدارس، شركات، معارض، عيادات...)" required ${isAiSearching ? 'disabled' : ''} />
+        <input id="finder-query" name="query" value="${escapeHtml(lastFinderQuery)}" placeholder="اكتب ما تبحث عنه (مدارس، جهات تعليمية، شركات...)" required ${isAiSearching ? 'disabled' : ''} />
         <input id="finder-country" name="country" value="${escapeHtml(lastFinderCountry)}" placeholder="الدولة أو المدينة (السعودية، الرياض، دبي...)" required ${isAiSearching ? 'disabled' : ''} />
         <button type="submit" class="button button-primary" ${isAiSearching ? 'disabled' : ''}>
           ${isAiSearching ? 'جاري البحث والاستخراج...' : `${icon('sparkles')} استخرج الجهات واختبرها`}
@@ -621,7 +624,7 @@ function renderDraftCard(draft) {
           <p>مسودة ${escapeHtml(draft.createdDate || formatDate(draft.createdAt, false))} · ${escapeHtml(draft.sector || 'القطاع غير محدد')} · ${draft.language === 'en' ? 'English' : 'العربية'}</p>
         </div>
       </div>
-      <span class="tag ai-online">مكتوبة باسم الجهة (AI)</span>
+      <span class="tag ai-online">مكتوبة باسم الجهة برابط الوكالة (AI)</span>
     </div>
     <div class="draft-subject"><strong>${draft.language === 'en' ? 'Subject:' : 'الموضوع:'}</strong> ${escapeHtml(draft.subject)}</div>
     <div class="draft-preview">${escapeHtml(draft.body)}</div>
@@ -635,16 +638,16 @@ function renderDraftCard(draft) {
 }
 
 function renderDrafts() {
-  return `${header('مسودات العروض الذكية', 'رسائل مخصصة كتبها الذكاء الاصطناعي باسم كل مدرسة أو شركة. جاهزة للإرسال أو النسخ.', `<button class="button button-primary" data-go="prospects">${icon('search')} استخراج جهات جديدة</button>`)}
+  return `${header('مسودات العروض الذكية', 'رسائل مخصصة كتبها الذكاء الاصطناعي باسم كل جهة ومتضمنة رابط وكالتك الرسمية للمعاينة والشراء.', `<button class="button button-primary" data-go="prospects">${icon('search')} استخراج جهات جديدة</button>`)}
     ${state.drafts.length ? `<div class="draft-list">${state.drafts.slice().reverse().map(renderDraftCard).join('')}</div>` : `<section class="empty-state"><span class="empty-icon">${icon('file')}</span><h3>لا توجد مسودات حتى الآن</h3><p>اذهب إلى «البحث والجهات AI»، استخرج قائمة مدارس أو شركات، واضغط «إنشاء رسائل للجميع».</p><button class="button button-primary" data-go="prospects">الذهاب إلى البحث الآلي ${icon('arrow')}</button></section>`}`;
 }
 
 function renderIntegrations() {
-  return `${header('الربط والإعدادات', 'حالة محرك الذكاء الاصطناعي وقنوات التواصل في مساحة العمل.')}
-    <div class="callout" style="margin-bottom:15px">${icon('sparkles')}<div><strong>الذكاء الاصطناعي متصل ويعمل مجانًا 100%</strong><p>تم دمج واجهة Pollinations AI المباشرة بدون مفاتيح API أو اشتراكات للبحث عن الجهات وصياغة العروض.</p></div></div>
-    <section class="connection-card"><span class="connection-icon">${icon('search')}</span><div class="connection-body"><div class="connection-head"><h3>محرك استخراج الجهات وفحص البيانات</h3><span class="connection-status connected">نشط وتلقائي</span></div><p>يستخرج قوائم المدارس والشركات وعناوينها وأرقام الواتساب والإيميلات وروابط المواقع، ثم يفحص صحة الأرقام والإيميلات تلقائيًا قبل تجهيز الرسائل.</p></div></section>
-    <section class="connection-card"><span class="connection-icon">${icon('message')}</span><div class="connection-body"><div class="connection-head"><h3>واتساب المباشر (wa.me)</h3><span class="connection-status connected">جاهز للإرسال</span></div><p>ينقل نص العرض المخصص باسم الجهة مباشرة إلى تطبيق واتساب على جهازك.</p></div></section>
-    <section class="connection-card"><span class="connection-icon">${icon('mail')}</span><div class="connection-body"><div class="connection-head"><h3>البريد الإلكتروني (mailto)</h3><span class="connection-status connected">جاهز للإرسال</span></div><p>يفتح تطبيق البريد الرسمي على جهازك مع عنوان الموضوع ونص العرض جاهزين للإرسال.</p></div></section>`;
+  const p = state.profile;
+  return `${header('الربط والإعدادات', 'حالة محرك الذكاء الاصطناعي ومعرض الوكالة الرقمي.')}
+    <div class="callout" style="margin-bottom:15px">${icon('sparkles')}<div><strong>رابط المعرض والوكالة متصل بنجاح</strong><p>جميع الرسائل والمسودات توجه الزبائن فوراً إلى: <a href="${escapeHtml(p.offerUrl)}" target="_blank" rel="noopener noreferrer" class="plain-link">omar200600.github.io/wkalteaxes/ ${icon('external')}</a></p></div></div>
+    <section class="connection-card"><span class="connection-icon">${icon('globe')}</span><div class="connection-body"><div class="connection-head"><h3>وكالة ثري دي اكسيس (3D Axis Virtual Agency)</h3><span class="connection-status connected">رابط مباشر للزبائن</span></div><p>معرض رقمي واسع يعرض الغرف والفصول ثلاثية الأبعاد لتتمكن المؤسسات والوزارات التعليمية من معاينتها وطلبها مباشرة.</p></div></section>
+    <section class="connection-card"><span class="connection-icon">${icon('search')}</span><div class="connection-body"><div class="connection-head"><h3>محرك استخراج الجهات وفحص البيانات</h3><span class="connection-status connected">نشط وتلقائي</span></div><p>يستخرج قوائم المدارس والشركات وأرقام الواتساب والإيميلات ويدمج رابط الوكالة في عروضها.</p></div></section>`;
 }
 
 function renderEventRow(event) {
@@ -658,9 +661,9 @@ function renderReports() {
   const prepared = state.metrics.draftsPrepared;
   const opened = state.metrics.channelsOpened;
   return `${header('التقارير', 'ملخص محلي لما سجلته داخل مساحة العمل.')}
-    <div class="report-grid"><div class="report-stat"><span>جهات مستخرجة</span><strong>${state.prospects.length}</strong><small>مفحوصة داخل الدليل</small></div><div class="report-stat"><span>مسودات ذكية أُعدت</span><strong>${prepared}</strong><small>مكتوبة باسم كل جهة</small></div><div class="report-stat"><span>جهات تم التواصل معها</span><strong>${manualContacted}</strong><small>حسب تحديثك للحالة</small></div><div class="report-stat"><span>قنوات فُتحت</span><strong>${opened}</strong><small>واتساب وبريد</small></div></div>
+    <div class="report-grid"><div class="report-stat"><span>جهات مستخرجة</span><strong>${state.prospects.length}</strong><small>مفحوصة داخل الدليل</small></div><div class="report-stat"><span>مسودات ذكية أُعدت</span><strong>${prepared}</strong><small>مكتوبة برابط الوكالة</small></div><div class="report-stat"><span>جهات تم التواصل معها</span><strong>${manualContacted}</strong><small>حسب تحديثك للحالة</small></div><div class="report-stat"><span>قنوات فُتحت</span><strong>${opened}</strong><small>واتساب وبريد</small></div></div>
     <div class="report-columns"><section class="section-card"><div class="section-title"><div><h2>سجل النشاط</h2><p>سجل العمليات المحلية وتوليد العروض.</p></div><span class="tag">${opened} فتح</span></div>${state.events.length ? `<div class="event-list">${state.events.slice(0, 15).map(renderEventRow).join('')}</div>` : `<div class="no-results">لا يوجد نشاط مسجل بعد.</div>`}</section>
-    <section class="section-card"><div class="section-title"><div><h2>حالة الجاهزية</h2><p>ملخص سريع لملف النشاط والمتابعات.</p></div></div><div class="status-row"><span class="status-symbol">${icon('layers')}</span><div><strong>ملف النشاط مكتمل ${completionPercent()}%</strong><p>${missingProfile().filter((x) => !x.done).map((x) => escapeHtml(x.label)).join('، ') || 'جميع البيانات الأساسية مكتملة وجاهزة للذكاء الاصطناعي.'}</p></div></div><div class="status-row"><span class="status-symbol">${icon('sparkles')}</span><div><strong>محرك Pollinations AI نشط</strong><p>متصل مجانًا بدون مفاتيح API.</p></div></div><div class="status-row"><span class="status-symbol amber">${icon('clock')}</span><div><strong>${followUps} متابعة مطلوبة · ${manualReplies} رد مسجل</strong><p>حدّث حالة كل جهة من صفحة الجهات بعد تواصلك معها.</p></div></div></section></div>
+    <section class="section-card"><div class="section-title"><div><h2>حالة الجاهزية</h2><p>ملخص سريع لملف النشاط والمتابعات.</p></div></div><div class="status-row"><span class="status-symbol">${icon('layers')}</span><div><strong>ملف النشاط مكتمل ${completionPercent()}%</strong><p>${missingProfile().filter((x) => !x.done).map((x) => escapeHtml(x.label)).join('، ') || 'جميع البيانات الأساسية مكتملة وجاهزة للذكاء الاصطناعي.'}</p></div></div><div class="status-row"><span class="status-symbol">${icon('globe')}</span><div><strong>رابط الوكالة مرتبط</strong><p>omar200600.github.io/wkalteaxes/</p></div></div></section></div>
     <section class="section-card" style="margin-top:15px"><div class="section-title"><div><h2>نسخة البيانات الاحتياطية</h2><p>احتفظ بملف JSON قبل مسح بيانات المتصفح أو استخدام جهاز آخر.</p></div></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="button button-primary" id="export-report">${icon('download')} تصدير البيانات احتياطيًا</button><button class="button button-secondary" id="import-report">${icon('upload')} استيراد البيانات</button></div></section>`;
 }
 
@@ -698,10 +701,10 @@ function navigate(view) {
 function saveProfile(form) {
   const values = Object.fromEntries(new FormData(form).entries());
   state.profile = { ...state.profile, ...values };
-  logEvent('profile', 'حُفظ ملف النشاط', state.profile.businessName || 'تغييرات محفوظة');
+  logEvent('profile', 'حُفظ ملف النشاط ورابط الوكالة', state.profile.businessName || 'تغييرات محفوظة');
   persist();
   render();
-  toast('حُفظت تغييرات ملف النشاط على هذا المتصفح.');
+  toast('حُفظت تغييرات ملف النشاط ورابط الوكالة على هذا المتصفح.');
 }
 
 // === محرك البحث والاستخراج التلقائي بالذكاء الاصطناعي ===
@@ -717,14 +720,14 @@ async function runAiProspectSearch(queryText, countryText, autoCreateDrafts = tr
   const prompt = `أنت باحث بيانات أعمال B2B خبير في الوطن العربي والخليج.
 المطلوب: ابحث واستخرج قائمة تضم 6 جهات حقيقية ومعروفة في مجال "${queryText}" في "${countryText}" (تجنب تكرار هذه الأسماء إن أمكن: ${existingNames || 'لا يوجد'}).
 لكل جهة، استخرج البيانات المتوفرة بدقة:
-1. name: الاسم الرسمي للمدرسة أو الشركة
+1. name: الاسم الرسمي للمدرسة أو الجهة أو الشركة
 2. sector: القطاع
 3. country: الدولة والمدينة
 4. address: العنوان أو الحي
-5. phone: رقم الهاتف أو الواتساب بصيغة دولية مثل +966500000000 (أو اتركه فارغًا "" إذا لم يكن معروفًا بدقة، لا تخترع أرقامًا وهمية)
-6. email: البريد الإلكتروني الرسمي (أو اتركه فارغًا "" إذا لم يكن مؤكدًا)
-7. website: رابط الموقع الإلكتروني الرسمي يبدأ بـ https:// (أو "" إذا لم يتوفر)
-8. notes: سبب ملاءمتها لخدمات الغرف ثلاثية الأبعاد التفاعلية لـ ثري دي اكسيس.
+5. phone: رقم الهاتف أو الواتساب بصيغة دولية مثل +966500000000 (أو اتركه فارغًا "" إذا لم يكن معروفًا بدقة)
+6. email: البريد الإلكتروني الرسمي (أو اتركه فارغًا "")
+7. website: رابط الموقع الإلكتروني الرسمي يبدأ بـ https:// (أو "")
+8. notes: سبب ملاءمتها لخدمات المعرض الافتراضي وغرف ثري دي اكسيس.
 
 أعد النتيجة بصيغة JSON Array فقط بدون أي نص قبله أو بعده وبدون علامات markdown:
 [{"name":"...","sector":"...","country":"...","address":"...","phone":"...","email":"...","website":"...","notes":"..."}]`;
@@ -772,7 +775,7 @@ async function runAiProspectSearch(queryText, countryText, autoCreateDrafts = tr
     render();
 
     if (addedProspects.length) {
-      toast(`تم استخراج وفحص ${addedProspects.length} جهة! جاري إنشاء رسائلها تلقائيًا...`);
+      toast(`تم استخراج وفحص ${addedProspects.length} جهة! جاري إنشاء رسائلها بالرابط الرسمي...`);
       if (autoCreateDrafts) {
         await generateBatchDraftsForList(addedProspects);
       }
@@ -827,7 +830,7 @@ async function generateBatchDraftsForList(targetProspects) {
         email: prospect.email,
         phone: prospect.phone,
         language: prospect.language || 'ar',
-        subject: `تجربة غرف ثلاثية الأبعاد تفاعلية لـ ${prospect.name}`,
+        subject: `دعوة لمعاينة المعرض الرقمي وثلاثي الأبعاد لـ ${prospect.name}`,
         body: buildFallbackDraftBody(prospect),
         aiGenerated: false,
         status: 'review',
@@ -842,10 +845,10 @@ async function generateBatchDraftsForList(targetProspects) {
 
   generatingDraftId = null;
   isBatchGenerating = false;
-  logEvent('draft', `توليد رسائل مخصصة لـ ${successCount} جهة`, 'جاهزة في قسم المسودات');
+  logEvent('draft', `توليد رسائل متضمنة رابط الوكالة لـ ${successCount} جهة`, 'جاهزة في قسم المسودات');
   persist();
   render();
-  toast(`اكتمل تجهيز ${successCount} رسالة باسم كل جهة! يمكنك مراجعتها وإرسالها من قسم المسودات.`);
+  toast(`اكتمل تجهيز ${successCount} رسالة متضمنة رابط الوكالة والشراء! يمكنك مراجعتها وإرسالها.`);
 }
 
 function parseChatValue(text) {
@@ -853,12 +856,12 @@ function parseChatValue(text) {
     { patterns: ['اسم الشركة', 'اسم النشاط', 'الشركة'], key: 'businessName', label: 'اسم النشاط' },
     { patterns: ['وصف المنتج', 'وصف الخدمة', 'المنتج', 'الخدمة'], key: 'productDescription', label: 'وصف المنتج أو الخدمة' },
     { patterns: ['السعر', 'التسعير', 'آلية السعر'], key: 'pricingNotes', label: 'السعر أو آلية طلب السعر' },
+    { patterns: ['رابط الوكالة', 'رابط المعرض', 'الرابط'], key: 'offerUrl', label: 'رابط الوكالة الرسمي' },
     { patterns: ['القطاعات', 'القطاع'], key: 'sectors', label: 'القطاعات المستهدفة' },
     { patterns: ['الدول', 'الدولة', 'البلدان'], key: 'countries', label: 'الدول المستهدفة' },
     { patterns: ['اللغات', 'اللغة'], key: 'languages', label: 'اللغات' },
     { patterns: ['البريد', 'الإيميل'], key: 'customerEmail', label: 'البريد الإلكتروني' },
     { patterns: ['واتساب', 'الهاتف'], key: 'customerPhone', label: 'رقم التواصل' },
-    { patterns: ['معلومات الشركة', 'نبذة'], key: 'companyDetails', label: 'معلومات الشركة' },
   ];
   const match = text.match(/^\s*([^:：]{2,40})\s*[:：]\s*(.+)$/s);
   if (!match) return null;
@@ -890,13 +893,13 @@ async function sendChatMessage(rawText) {
 
   const recentHistory = state.chat.slice(-6).map((m) => `${m.role === 'user' ? 'عمر' : 'المستشار'}: ${m.text}`).join('\n');
   const prompt = `أنت مستشار مبيعات وتسويق خبير لشركة "${state.profile.businessName || 'ثري دي اكسيس (3D Axis)'}" التي أسسها الأستاذ عمر حسان عبره.
-معلومات المشروع:
+معلومات المشروع ورابط الوكالة الرسمي للمعرض:
 ${buildCompanyContext()}
 
 سياق المحادثة الأخيرة:
 ${recentHistory}
 
-أجب عن رسالة الأستاذ عمر بأسلوب عملي، مقنع، مباشر، وباللغة العربية الواضحة دون حشو أو مقدمات طويلة. إذا طلب صياغة رسالة تسويقية فاجعلها جاهزة للنسخ والإرسال مباشرة:
+أجب عن رسالة الأستاذ عمر بأسلوب عملي، مقنع، مباشر، وباللغة العربية الواضحة. تأكد دائماً من توجيه العملاء لمعاينة الغرف وطلب الشراء والإيجار عبر رابط الوكالة الرسمي (${state.profile.offerUrl}):
 ${text}`;
 
   try {
@@ -945,7 +948,7 @@ function addProspect(form) {
     return;
   }
   state.prospects.push(prospect);
-  logEvent('prospect', 'أُضيفت جهة يدويًا وفُحصت بياناتها', prospect.name);
+  logEvent('prospect', 'أُضيفت جهة يدويًا', prospect.name);
   persist();
   document.querySelector('#lead-dialog').close();
   form.reset();
@@ -972,9 +975,9 @@ function buildFallbackDraftBody(prospect) {
   if (prospect.language === 'en') {
     return `Hello ${prospect.name},
 
-I'm reaching out from ${company}. We offer ready-to-use interactive 3D rooms for classrooms, offices, shops, and exhibitions, equipped with smart avatars, boards, and interactive buttons.
+I'm reaching out from ${company}. We offer ready-to-use interactive 3D rooms and virtual campuses, equipped with smart avatars and interactive buttons.
 
-We would be glad to learn about your needs and prepare a tailored proposal. Explore our showcase and order page: ${p.offerUrl}
+You are welcome to visit our official virtual agency showcase and request custom rooms or monthly leasing here: ${p.offerUrl}
 
 Kind regards,
 ${company}
@@ -984,12 +987,13 @@ ${p.customerEmail}`;
   return `السلام عليكم ورحمة الله وبركاته
 الإخوة الكرام في ${prospect.name}،
 
-نتواصل معكم من ${company}. نقدم ${product}: ${p.productDescription}
+نتواصل معكم من ${company} (وكالة البيئات الافتراضية). نقدم ${product}: ${p.productDescription}
 
-يسعدنا تقديم تجربة افتراضية تفاعلية تناسب احتياجكم${sectorText}، ويمكنكم الاطلاع على نماذج الغرف وطلب عرض خاص عبر الرابط: ${p.offerUrl}
+يسعدنا دعوتكم لمعاينة غرفنا وفصولنا الافتراضية ثلاثية الأبعاد واختيار ما يناسبكم${sectorText}، وطلب الشراء أو الإيجار الشامل للأفاتار الذكي مباشرة عبر زيارة معرضنا الرقمي الرسمي:
+🔗 ${p.offerUrl}
 
 مع خالص التحية والتقدير،
-الأستاذ عمر حسان عبره — ${company}
+الأستاذ عمر حسان عبره — Founder & CEO of 3D Axis
 واتساب: ${p.customerPhone}
 البريد: ${p.customerEmail}`;
 }
@@ -1000,18 +1004,20 @@ async function generateAiOfferForProspect(prospect, styleHint = '') {
   const prompt = isEn
     ? `You are a B2B sales copywriter for "${p.businessName || '3D Axis'}". Write a persuasive, concise outreach message (for WhatsApp/Email) addressed specifically to "${prospect.name}" (Sector: ${prospect.sector || 'General'}, Country: ${prospect.country || 'International'}). Notes: ${prospect.notes || 'None'}. ${styleHint}
 Our offering: ${p.productDescription}. Pricing: ${p.pricingNotes}.
-Include our link: ${p.offerUrl} and contact details: ${p.customerPhone} | ${p.customerEmail}.
+IMPORTANT: Include our official virtual agency and showcase link for viewing and ordering: ${p.offerUrl}
+Contact details: ${p.customerPhone} | ${p.customerEmail}.
 Format strictly as:
 SUBJECT: <short compelling subject line>
 BODY:
 <the complete message ready to send without placeholders>`
-    : `أنت خبير مبيعات وتسويق لشركة "${p.businessName || 'ثري دي اكسيس (3D Axis)'}". اكتب رسالة عرض مبيعات احترافية، مقنعة، ومختصرة موجهة بالاسم إلى "${prospect.name}" (القطاع: ${prospect.sector || 'عام'}، الموقع: ${prospect.country || ''} ${prospect.address || ''}). زاوية الإقناع: ${prospect.notes || 'تطوير التجربة الرقمية والتفاعلية'}. ${styleHint}
+    : `أنت خبير مبيعات وتسويق لشركة "${p.businessName || 'ثري دي اكسيس (3D Axis)'}" التي أسسها الأستاذ عمر حسان عبره. اكتب رسالة عرض مبيعات احترافية، مقنعة، ومختصرة موجهة بالاسم إلى "${prospect.name}" (القطاع: ${prospect.sector || 'عام'}، الموقع: ${prospect.country || ''} ${prospect.address || ''}). زاوية الإقناع: ${prospect.notes || 'تطوير التجربة التعليمية والتجارية'}. ${styleHint}
 بيانات خدمتنا: ${p.productDescription}. التسعير: ${p.pricingNotes}.
-أدرج رابط العرض والطلب: ${p.offerUrl} وبيانات التواصل في التوقيع: الأستاذ عمر حسان عبره | ${p.customerPhone} | ${p.customerEmail}.
+مهم جداً: ادمج في صلب الرسالة رابط المعرض والوكالة الرسمي لكي يعاينوا الغرف ويطلبوا الشراء أو الإيجار مباشرة: ${p.offerUrl}
+توقيع الرسالة: الأستاذ عمر حسان عبره | واتساب: ${p.customerPhone} | البريد: ${p.customerEmail}.
 التزم بالتنسيق التالي بدقة وبدون أي مقدمات أو أقواس مربعة:
 SUBJECT: <عنوان قصير وجذاب للبريد>
 BODY:
-<نص الرسالة الكامل الموجه باسم الجهة والجاهز للإرسال مباشرة>`;
+<نص الرسالة الكامل الموجه باسم الجهة والمتضمن رابط الوكالة والجاهز للإرسال مباشرة>`;
 
   const raw = await askPollinationsAI(prompt);
   const subjectMatch = raw.match(/SUBJECT:\s*(.+)/i);
@@ -1024,7 +1030,7 @@ BODY:
     };
   }
   return {
-    subject: isEn ? `Interactive 3D Experience for ${prospect.name} — 3D Axis` : `تجربة غرف ثلاثية الأبعاد تفاعلية لـ ${prospect.name} — ثري دي اكسيس`,
+    subject: isEn ? `Interactive 3D Showcase for ${prospect.name} — 3D Axis` : `دعوة لمعاينة المعرض الافتراضي وثلاثي الأبعاد لـ ${prospect.name}`,
     body: raw.trim(),
     aiGenerated: true,
   };
@@ -1035,7 +1041,7 @@ async function createDraft(id) {
   if (!prospect || generatingDraftId) return;
   generatingDraftId = id;
   render();
-  toast(`جاري كتابة رسالة مخصصة باسم ${prospect.name}...`);
+  toast(`جاري كتابة رسالة مخصصة باسم ${prospect.name} وتضمين رابط الوكالة...`);
 
   try {
     const generated = await generateAiOfferForProspect(prospect);
@@ -1057,7 +1063,7 @@ async function createDraft(id) {
     };
     state.drafts.push(draft);
     state.metrics.draftsPrepared += 1;
-    logEvent('draft', 'وُلّد عرض ذكي باسم الجهة', prospect.name);
+    logEvent('draft', 'وُلّد عرض ذكي باسم الجهة برابط الوكالة', prospect.name);
     toast('تم توليد العرض الذكي! راجعه قبل الإرسال.');
   } catch (error) {
     const draft = {
@@ -1069,7 +1075,7 @@ async function createDraft(id) {
       email: prospect.email,
       phone: prospect.phone,
       language: prospect.language || 'ar',
-      subject: `تجربة غرف ثلاثية الأبعاد تفاعلية لـ ${prospect.name}`,
+      subject: `دعوة لمعاينة المعرض الرقمي وثلاثي الأبعاد لـ ${prospect.name}`,
       body: buildFallbackDraftBody(prospect),
       aiGenerated: false,
       status: 'review',
@@ -1078,7 +1084,7 @@ async function createDraft(id) {
     };
     state.drafts.push(draft);
     state.metrics.draftsPrepared += 1;
-    toast('تم تجهيز مسودة محلية باسم الجهة.');
+    toast('تم تجهيز مسودة محلية برابط الوكالة.');
   } finally {
     generatingDraftId = null;
     persist();
@@ -1099,9 +1105,9 @@ async function regenerateDraft(draftId) {
   };
   generatingDraftId = draftId;
   render();
-  toast('جاري صياغة أسلوب تسويقي جديد بالذكاء الاصطناعي...');
+  toast('جاري صياغة أسلوب تسويقي جديد متضمن رابط الوكالة بالذكاء الاصطناعي...');
   try {
-    const generated = await generateAiOfferForProspect(prospect, 'اكتب نسخة مختلفة تمامًا بأسلوب تسويقي جديد وزاوية إقناع مبتكرة.');
+    const generated = await generateAiOfferForProspect(prospect, 'اكتب نسخة مختلفة تمامًا بأسلوب تسويقي جديد وزاوية إقناع مبتكرة مع الحفاظ على رابط المعرض.');
     draft.subject = generated.subject;
     draft.body = generated.body;
     draft.aiGenerated = true;
@@ -1120,9 +1126,9 @@ function copyDraftText(id) {
   const draft = state.drafts.find((d) => d.id === id);
   if (!draft) return;
   navigator.clipboard?.writeText(draft.body).then(() => {
-    toast('تم نسخ نص الرسالة إلى الحافظة!');
+    toast('تم نسخ نص الرسالة المتضمن رابط الوكالة إلى الحافظة!');
   }).catch(() => {
-    toast('تعذر النسخ التلقائي، حدد النص وانسخه يدويًا.', 'error');
+    toast('تعذر النسخ التلقائي.', 'error');
   });
 }
 
@@ -1150,7 +1156,7 @@ function openWhatsApp(id) {
   state.metrics.channelsOpened += 1;
   logEvent('channel-open', 'فُتح رابط واتساب للإرسال', draft.orgName);
   persist();
-  toast('فتحنا واتساب بنص المسودة المخصصة للجهة.');
+  toast('فتحنا واتساب بنص المسودة المتضمنة رابط المعرض.');
 }
 
 function openEmail(id) {
